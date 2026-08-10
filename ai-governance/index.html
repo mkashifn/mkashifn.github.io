@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISO/IEC 42001 — AI Management System Competency</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          boxShadow: {
+            soft: "0 20px 60px rgba(15,23,42,.08)",
+            card: "0 10px 30px rgba(15,23,42,.06)"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(circle at 10% 0%, rgba(124,58,237,.08), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%),
+        #f8fafc;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .tab-active {
+      background: #111827;
+      color: white;
+      box-shadow: 0 8px 20px rgba(17,24,39,.15);
+    }
+
+    .node { transition: all .2s ease; }
+    .node:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(15,23,42,.12);
+    }
+
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .pulse-dot { animation: pulseDot 2s infinite; }
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,.35); }
+      50%      { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+    }
+
+    .connector {
+      height: 2px;
+      background: linear-gradient(90deg, #cbd5e1, #7c3aed, #cbd5e1);
+    }
+  </style>
+</head>
+
+<body class="text-slate-800">
+
+  <!-- ========================================================= -->
+  <!-- HEADER (inspired by mkashifn-ai-architectures)            -->
+  <!-- ========================================================= -->
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+
+      <div class="flex items-center gap-3 shrink-0">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed"
+             class="w-11 h-11 rounded-full object-cover ring-2 ring-violet-100" />
+        <div class="font-bold text-slate-900">Kashif Naveed</div>
+      </div>
+
+      <div class="md:border-l md:border-slate-200 md:pl-6">
+        <h1 class="text-lg md:text-xl font-bold tracking-tight text-slate-950">
+          Implementing &amp; auditing AI Management Systems
+          <span class="text-violet-600">to ISO/IEC 42001.</span>
+        </h1>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Building and auditing AI Management Systems — from clause 4 context to Annex A controls.
+        </p>
+      </div>
+
+      <!-- Standard reference chip -->
+      <div class="md:ml-auto shrink-0">
+        <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
+          Standard
+        </div>
+        <a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-slate-100 border border-slate-200 rounded-xl px-3 py-2 hover:border-violet-300 transition">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+          <span class="text-sm font-bold text-slate-800">ISO/IEC 42001:2023</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- HERO / COMPETENCY SNAPSHOT                                 -->
+  <!-- ========================================================= -->
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+      <div class="flex flex-col lg:flex-row lg:items-end gap-6">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-xs font-bold text-violet-700 bg-violet-100 rounded-full px-3 py-1 mb-4">
+            AI MANAGEMENT SYSTEM (AIMS)
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-950 leading-tight">
+            A practitioner's map of the world's first
+            <span class="text-violet-600">AI management system standard.</span>
+          </h2>
+          <p class="text-slate-500 mt-3 leading-relaxed">
+            ISO/IEC 42001 gives organizations a certifiable framework to develop, deploy, and
+            govern AI responsibly. This page demonstrates working command of its structure —
+            the management-system clauses, the 38 Annex A controls, the Plan–Do–Check–Act
+            lifecycle, and how they translate into an implementation roadmap.
+          </p>
+        </div>
+
+        <!-- Stat tiles -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:ml-auto">
+          <div class="node bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-card">
+            <div class="text-2xl font-bold text-slate-900">7</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">Core clauses (4–10)</div>
+          </div>
+          <div class="node bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-card">
+            <div class="text-2xl font-bold text-slate-900">38</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">Annex A controls</div>
+          </div>
+          <div class="node bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-card">
+            <div class="text-2xl font-bold text-slate-900">9</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">Control objectives</div>
+          </div>
+          <div class="node bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-card">
+            <div class="text-2xl font-bold text-slate-900">4</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">PDCA phases</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- TABS                                                       -->
+  <!-- ========================================================= -->
+  <main class="max-w-7xl mx-auto px-6 pb-20">
+
+    <div class="bg-white border border-slate-200 rounded-2xl p-2 shadow-card
+                flex flex-col md:flex-row gap-2 my-8">
+
+      <button onclick="showTab('overview')" id="tab-overview"
+        class="tab-button tab-active flex-1 text-left px-5 py-4 rounded-xl transition">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-violet-100 text-violet-700 flex items-center justify-center">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <path d="M4 9h16M9 9v11"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold">Overview</div>
+            <div class="text-xs opacity-70 mt-0.5">What & why</div>
+          </div>
+        </div>
+      </button>
+
+      <button onclick="showTab('clauses')" id="tab-clauses"
+        class="tab-button flex-1 text-left px-5 py-4 rounded-xl transition">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-cyan-100 text-cyan-700 flex items-center justify-center">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M8 6h11M8 12h11M8 18h11"/>
+              <circle cx="4" cy="6" r="1.2"/><circle cx="4" cy="12" r="1.2"/><circle cx="4" cy="18" r="1.2"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold">Clauses 4–10</div>
+            <div class="text-xs opacity-70 mt-0.5">Management system</div>
+          </div>
+        </div>
+      </button>
+
+      <button onclick="showTab('annexa')" id="tab-annexa"
+        class="tab-button flex-1 text-left px-5 py-4 rounded-xl transition">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 4l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold">Annex A Controls</div>
+            <div class="text-xs opacity-70 mt-0.5">A.2 – A.10</div>
+          </div>
+        </div>
+      </button>
+
+      <button onclick="showTab('pdca')" id="tab-pdca"
+        class="tab-button flex-1 text-left px-5 py-4 rounded-xl transition">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20 12a8 8 0 1 1-2.3-5.6"/>
+              <path d="M20 4v4h-4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold">PDCA Lifecycle</div>
+            <div class="text-xs opacity-70 mt-0.5">Continual improvement</div>
+          </div>
+        </div>
+      </button>
+
+      <button onclick="showTab('roadmap')" id="tab-roadmap"
+        class="tab-button flex-1 text-left px-5 py-4 rounded-xl transition">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 20L20 4M14 4h6v6"/>
+              <circle cx="6" cy="18" r="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-bold">Roadmap</div>
+            <div class="text-xs opacity-70 mt-0.5">Path to certification</div>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- TAB: OVERVIEW                                            -->
+    <!-- ======================================================= -->
+    <section id="panel-overview" class="tab-panel fade-in">
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 bg-white border border-slate-200 rounded-2xl p-7 shadow-card">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">What is ISO/IEC 42001?</h3>
+          <p class="text-slate-600 leading-relaxed">
+            ISO/IEC 42001:2023 is the first international standard specifying requirements for
+            establishing, implementing, maintaining, and continually improving an
+            <span class="font-semibold text-slate-900">Artificial Intelligence Management System (AIMS)</span>.
+            It is designed for any organization that provides or uses AI products or services,
+            regardless of size or sector, and is auditable and certifiable by accredited bodies.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <div class="rounded-xl border border-slate-200 p-4">
+              <div class="text-xs font-bold text-violet-600 uppercase tracking-wide mb-1">Risk-based</div>
+              <p class="text-sm text-slate-600">Requires AI risk assessments and AI system impact assessments over the full lifecycle.</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-4">
+              <div class="text-xs font-bold text-cyan-600 uppercase tracking-wide mb-1">Harmonized structure</div>
+              <p class="text-sm text-slate-600">Uses the ISO Annex SL high-level structure, so it integrates with ISO 27001 and 9001.</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-4">
+              <div class="text-xs font-bold text-emerald-600 uppercase tracking-wide mb-1">Trust & accountability</div>
+              <p class="text-sm text-slate-600">Addresses transparency, fairness, safety, security, and human oversight of AI.</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-4">
+              <div class="text-xs font-bold text-amber-600 uppercase tracking-wide mb-1">Regulation-ready</div>
+              <p class="text-sm text-slate-600">Maps cleanly onto the EU AI Act and NIST AI RMF as an operational backbone.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 text-white rounded-2xl p-7 shadow-soft">
+          <h3 class="text-lg font-bold mb-3">Who it's for</h3>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex gap-3"><span class="text-violet-400 font-bold">→</span> AI providers & developers</li>
+            <li class="flex gap-3"><span class="text-violet-400 font-bold">→</span> Organizations deploying AI</li>
+            <li class="flex gap-3"><span class="text-violet-400 font-bold">→</span> Public-sector & regulated industries</li>
+            <li class="flex gap-3"><span class="text-violet-400 font-bold">→</span> Vendors managing AI supply chains</li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <div class="text-xs text-slate-400 uppercase font-bold tracking-wide mb-2">Certification cycle</div>
+            <p class="text-sm text-slate-300">Stage 1 (readiness) → Stage 2 (audit) → surveillance audits → 3-year recertification.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related standards strip -->
+      <div class="mt-6 bg-white border border-slate-200 rounded-2xl p-6 shadow-card">
+        <div class="text-xs font-bold text-slate-500 uppercase tracking-wide mb-4">Companion standards in the ISO/IEC 42000 family</div>
+        <div class="flex flex-wrap gap-3">
+          <span class="text-sm font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-2">ISO/IEC 22989 — AI concepts & terminology</span>
+          <span class="text-sm font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-2">ISO/IEC 23894 — AI risk management</span>
+          <span class="text-sm font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-2">ISO/IEC 23053 — ML framework</span>
+          <span class="text-sm font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-2">ISO/IEC 42005 — AI system impact assessment</span>
+          <span class="text-sm font-medium text-slate-700 bg-slate-100 border border-slate-200 rounded-lg px-3 py-2">ISO/IEC 5259 — Data quality for analytics & ML</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- TAB: CLAUSES 4–10                                        -->
+    <!-- ======================================================= -->
+    <section id="panel-clauses" class="tab-panel hidden fade-in">
+      <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-card mb-6">
+        <h3 class="text-lg font-bold text-slate-900">The management-system requirements</h3>
+        <p class="text-slate-600 mt-1">Clauses 4–10 are the auditable "shall" requirements. They follow the Annex SL structure shared across all modern ISO management-system standards.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Clause 4 -->
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-violet-600 text-white font-bold flex items-center justify-center">4</div>
+            <div class="font-bold text-slate-900">Context of the organization</div>
+          </div>
+          <ul class="text-sm text-slate-600 space-y-1.5">
+            <li>4.1 Understanding the organization & its context</li>
+            <li>4.2 Needs & expectations of interested parties</li>
+            <li>4.3 Determining AIMS scope</li>
+            <li>4.4 The AI management system</li>
+          </ul>
+        </div>
+        <!-- Clause 5 -->
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-600 text-white font-bold flex items-center justify-center">5</div>
+            <div class="font-bold text-slate-900">Leadership</div>
+          </div>
+          <ul class="text-sm text-slate-600 space-y-1.5">
+            <li>5.1 Leadership & commitment</li>
+            <li>5.2 AI policy</li>
+            <li>5.3 Roles, responsibilities & authorities</li>
+          </ul>
+        </div>
+        <!-- Clause 6 -->
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center">6</div>
+            <div class="font-bold text-slate-900">Planning</div>
+          </div>
+          <ul class="text-sm text-slate-600 space-y-1.5">
+            <li>6.1 Actions to address risks & opportunities</li>
+            <li>6.1.2 AI risk assessment</li>
+            <li>6.1.3 AI risk treatment</li>
+            <li>6.1.4 AI system impact assessment</li>
+            <li>6.2 AI objectives & planning</li>
+          </ul>
+        </div>
+        <!-- Clause 7 -->
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-600 text-white font-bold flex items-center justify-center">7</div>
+            <div class="font-bold text-slate-900">Support</div>
+          </div>
+          <ul class="text-sm text-slate-600 space-y-1.5">
+            <li>7.1 Resources</li>
+            <li>7.2 Competence</li>
+            <li>7.3 Awareness</li>
+            <li>7.4 Communication</li>
+            <li>7.5 Documented information</li>
+          </ul>
+        </div>
+        <!-- Clause 8 -->
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-rose-600 text-white font-bold flex items-center justify-center">8</div>
+            <div class="font-bold text-slate-900">Operation</div>
+          </div>
+          <ul class="text-sm text-slate-600 space-y-1.5">
+            <li>8.1 Operational planning & control</li>
+            <li>8.2 AI risk assessment (operational)</li>
+            <li>8.3 AI risk treatment (operational)</li>
+            <li>8.4 AI system impact assessment</li>
+          </ul>
+        </div>
+        <!-- Clause 9 -->
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center">9</div>
+            <div class="font-bold text-slate-900">Performance evaluation</div>
+          </div>
+          <ul class="text-sm text-slate-600 space-y-1.5">
+            <li>9.1 Monitoring, measurement & analysis</li>
+            <li>9.2 Internal audit</li>
+            <li>9.3 Management review</li>
+          </ul>
+        </div>
+        <!-- Clause 10 -->
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card lg:col-span-3 md:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-lg bg-slate-800 text-white font-bold flex items-center justify-center">10</div>
+            <div class="font-bold text-slate-900">Improvement</div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-6">
+            <ul class="text-sm text-slate-600 space-y-1.5 flex-1">
+              <li>10.1 Continual improvement</li>
+              <li>10.2 Nonconformity & corrective action</li>
+            </ul>
+            <p class="text-sm text-slate-500 flex-1 border-l border-slate-200 pl-6">
+              Closes the loop: findings from audits and management reviews feed corrective actions,
+              driving the AIMS to mature over each certification cycle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- TAB: ANNEX A CONTROLS                                    -->
+    <!-- ======================================================= -->
+    <section id="panel-annexa" class="tab-panel hidden fade-in">
+      <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-card mb-6">
+        <h3 class="text-lg font-bold text-slate-900">Annex A — 38 controls across 9 objectives</h3>
+        <p class="text-slate-600 mt-1">Annex A is the reference control set (like ISO 27001's Annex A). Organizations select applicable controls in a Statement of Applicability (SoA); Annex B gives implementation guidance.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-violet-500">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.2 — Policies related to AI</div>
+            <span class="text-xs font-bold text-violet-700 bg-violet-100 rounded-full px-2 py-0.5">2 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">Management direction and a documented AI policy, aligned with business objectives and reviewed at intervals.</p>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-cyan-500">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.3 — Internal organization</div>
+            <span class="text-xs font-bold text-cyan-700 bg-cyan-100 rounded-full px-2 py-0.5">3 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">AI roles & responsibilities, and reporting of concerns about the organization's AI systems.</p>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-emerald-500">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.4 — Resources for AI systems</div>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-100 rounded-full px-2 py-0.5">6 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">Documenting and managing data, tooling, compute, human, and system resources used by AI systems.</p>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-amber-500">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.5 — Assessing impacts of AI systems</div>
+            <span class="text-xs font-bold text-amber-700 bg-amber-100 rounded-full px-2 py-0.5">4 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">Impact assessments covering individuals, groups, and society — including harms and benefits.</p>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-rose-500">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.6 — AI system life cycle</div>
+            <span class="text-xs font-bold text-rose-700 bg-rose-100 rounded-full px-2 py-0.5">7 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">Responsible design & development: objectives, documentation, verification, validation, deployment & operation.</p>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-indigo-500">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.7 — Data for AI systems</div>
+            <span class="text-xs font-bold text-indigo-700 bg-indigo-100 rounded-full px-2 py-0.5">6 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">Data management, provenance, quality, and preparation for AI development and operation.</p>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-teal-500">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.8 — Information for interested parties</div>
+            <span class="text-xs font-bold text-teal-700 bg-teal-100 rounded-full px-2 py-0.5">4 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">Transparency to users: system documentation, incident reporting, and information on intended use.</p>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-fuchsia-500">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.9 — Use of AI systems</div>
+            <span class="text-xs font-bold text-fuchsia-700 bg-fuchsia-100 rounded-full px-2 py-0.5">3 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">Responsible use: defined intended use, and processes for operating AI systems as designed.</p>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card border-l-4 border-l-slate-500 md:col-span-2">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold text-slate-900">A.10 — Third-party & customer relationships</div>
+            <span class="text-xs font-bold text-slate-700 bg-slate-200 rounded-full px-2 py-0.5">3 controls</span>
+          </div>
+          <p class="text-sm text-slate-600">Allocating responsibilities across the AI supply chain and with suppliers, partners, and customers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- TAB: PDCA LIFECYCLE                                      -->
+    <!-- ======================================================= -->
+    <section id="panel-pdca" class="tab-panel hidden fade-in">
+      <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-card mb-6">
+        <h3 class="text-lg font-bold text-slate-900">Plan – Do – Check – Act</h3>
+        <p class="text-slate-600 mt-1">The AIMS is built on continual improvement. Each clause maps to a PDCA phase, forming a repeating cycle that matures the system over time.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-5 items-stretch">
+        <div class="node bg-white border-t-4 border-t-violet-500 border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="text-xs font-bold text-violet-600 uppercase tracking-wide">Plan</div>
+          <div class="text-3xl font-bold text-slate-900 mt-1 mb-3">01</div>
+          <p class="text-sm text-slate-600">Establish context, leadership, policy, objectives, and risk/impact assessments.</p>
+          <div class="mt-4 text-xs font-medium text-slate-400">Clauses 4 · 5 · 6</div>
+        </div>
+        <div class="node bg-white border-t-4 border-t-cyan-500 border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="text-xs font-bold text-cyan-600 uppercase tracking-wide">Do</div>
+          <div class="text-3xl font-bold text-slate-900 mt-1 mb-3">02</div>
+          <p class="text-sm text-slate-600">Provide resources and implement operational controls across the AI lifecycle.</p>
+          <div class="mt-4 text-xs font-medium text-slate-400">Clauses 7 · 8</div>
+        </div>
+        <div class="node bg-white border-t-4 border-t-amber-500 border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="text-xs font-bold text-amber-600 uppercase tracking-wide">Check</div>
+          <div class="text-3xl font-bold text-slate-900 mt-1 mb-3">03</div>
+          <p class="text-sm text-slate-600">Monitor, measure, run internal audits, and conduct management reviews.</p>
+          <div class="mt-4 text-xs font-medium text-slate-400">Clause 9</div>
+        </div>
+        <div class="node bg-white border-t-4 border-t-emerald-500 border border-slate-200 rounded-2xl p-6 shadow-card">
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Act</div>
+          <div class="text-3xl font-bold text-slate-900 mt-1 mb-3">04</div>
+          <p class="text-sm text-slate-600">Address nonconformities and drive continual improvement of the AIMS.</p>
+          <div class="mt-4 text-xs font-medium text-slate-400">Clause 10</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 mt-6 text-sm text-slate-500">
+        <div class="connector flex-1 rounded"></div>
+        <span class="font-medium whitespace-nowrap">Repeat every certification cycle</span>
+        <div class="connector flex-1 rounded"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- TAB: ROADMAP                                             -->
+    <!-- ======================================================= -->
+    <section id="panel-roadmap" class="tab-panel hidden fade-in">
+      <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-card mb-6">
+        <h3 class="text-lg font-bold text-slate-900">Implementation roadmap to certification</h3>
+        <p class="text-slate-600 mt-1">A pragmatic sequence for taking an organization from zero to a certifiable AI Management System.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col sm:flex-row gap-5">
+          <div class="w-12 h-12 shrink-0 rounded-xl bg-violet-600 text-white font-bold text-lg flex items-center justify-center">1</div>
+          <div class="flex-1">
+            <div class="font-bold text-slate-900">Gap analysis & scoping</div>
+            <p class="text-sm text-slate-600 mt-1">Define AIMS scope, map AI systems, and benchmark current practice against clauses 4–10 and Annex A.</p>
+          </div>
+          <div class="text-xs font-bold text-slate-400 self-center whitespace-nowrap">Weeks 1–3</div>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col sm:flex-row gap-5">
+          <div class="w-12 h-12 shrink-0 rounded-xl bg-cyan-600 text-white font-bold text-lg flex items-center justify-center">2</div>
+          <div class="flex-1">
+            <div class="font-bold text-slate-900">Governance & policy</div>
+            <p class="text-sm text-slate-600 mt-1">Secure leadership commitment, appoint roles, and publish the AI policy and objectives.</p>
+          </div>
+          <div class="text-xs font-bold text-slate-400 self-center whitespace-nowrap">Weeks 3–6</div>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col sm:flex-row gap-5">
+          <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-600 text-white font-bold text-lg flex items-center justify-center">3</div>
+          <div class="flex-1">
+            <div class="font-bold text-slate-900">Risk & impact assessments</div>
+            <p class="text-sm text-slate-600 mt-1">Run AI risk assessments and AI system impact assessments; build the risk treatment plan and SoA.</p>
+          </div>
+          <div class="text-xs font-bold text-slate-400 self-center whitespace-nowrap">Weeks 6–10</div>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col sm:flex-row gap-5">
+          <div class="w-12 h-12 shrink-0 rounded-xl bg-amber-600 text-white font-bold text-lg flex items-center justify-center">4</div>
+          <div class="flex-1">
+            <div class="font-bold text-slate-900">Implement Annex A controls</div>
+            <p class="text-sm text-slate-600 mt-1">Roll out selected controls across data, lifecycle, transparency, and supplier relationships.</p>
+          </div>
+          <div class="text-xs font-bold text-slate-400 self-center whitespace-nowrap">Weeks 8–20</div>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6 shadow-card flex flex-col sm:flex-row gap-5">
+          <div class="w-12 h-12 shrink-0 rounded-xl bg-rose-600 text-white font-bold text-lg flex items-center justify-center">5</div>
+          <div class="flex-1">
+            <div class="font-bold text-slate-900">Internal audit & management review</div>
+            <p class="text-sm text-slate-600 mt-1">Verify effectiveness, close nonconformities, and demonstrate continual improvement.</p>
+          </div>
+          <div class="text-xs font-bold text-slate-400 self-center whitespace-nowrap">Weeks 18–24</div>
+        </div>
+        <div class="node bg-slate-900 text-white rounded-2xl p-6 shadow-soft flex flex-col sm:flex-row gap-5">
+          <div class="w-12 h-12 shrink-0 rounded-xl bg-white text-slate-900 font-bold text-lg flex items-center justify-center">6</div>
+          <div class="flex-1">
+            <div class="font-bold">Certification audit (Stage 1 & 2)</div>
+            <p class="text-sm text-slate-300 mt-1">Readiness review then certification audit by an accredited body, followed by surveillance audits.</p>
+          </div>
+          <div class="text-xs font-bold text-slate-400 self-center whitespace-nowrap">Week 24+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- OFFICIAL REFERENCES                                      -->
+    <!-- ======================================================= -->
+    <section class="mt-8">
+      <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-card">
+        <div class="text-xs font-bold text-slate-500 uppercase tracking-wide mb-1">Official references</div>
+        <h3 class="text-lg font-bold text-slate-900 mb-4">Read the standard at the source (ISO)</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <a href="https://www.iso.org/obp/ui/en/#iso:std:iso-iec:42001:ed-1:v1:en"
+             target="_blank" rel="noopener noreferrer"
+             class="node group block rounded-xl border border-slate-200 p-5 hover:border-violet-300">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-violet-700 bg-violet-100 rounded-full px-2 py-0.5">Online Browsing Platform</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   class="text-slate-400 group-hover:text-violet-600 transition">
+                <path d="M7 17L17 7M9 7h8v8"/>
+              </svg>
+            </div>
+            <div class="font-bold text-slate-900">ISO/IEC 42001:2023 — full preview</div>
+            <p class="text-sm text-slate-600 mt-1">Read the standard's scope, terms, clauses, and Annex A on the ISO OBP.</p>
+            <div class="text-xs text-slate-400 mt-3 truncate">iso.org/obp/ui</div>
+          </a>
+
+          <a href="https://www.iso.org/standard/42001"
+             target="_blank" rel="noopener noreferrer"
+             class="node group block rounded-xl border border-slate-200 p-5 hover:border-cyan-300">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-cyan-700 bg-cyan-100 rounded-full px-2 py-0.5">Catalogue & purchase</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   class="text-slate-400 group-hover:text-cyan-600 transition">
+                <path d="M7 17L17 7M9 7h8v8"/>
+              </svg>
+            </div>
+            <div class="font-bold text-slate-900">Standard catalogue page</div>
+            <p class="text-sm text-slate-600 mt-1">Abstract, status, edition details, and options to buy the official PDF or print.</p>
+            <div class="text-xs text-slate-400 mt-3 truncate">iso.org/standard/42001</div>
+          </a>
+
+          <a href="https://www.iso.org/home/insights-news/resources/iso-42001-explained-what-it-is.html"
+             target="_blank" rel="noopener noreferrer"
+             class="node group block rounded-xl border border-slate-200 p-5 hover:border-emerald-300">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-100 rounded-full px-2 py-0.5">Explainer</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   class="text-slate-400 group-hover:text-emerald-600 transition">
+                <path d="M7 17L17 7M9 7h8v8"/>
+              </svg>
+            </div>
+            <div class="font-bold text-slate-900">ISO 42001 explained</div>
+            <p class="text-sm text-slate-600 mt-1">Plain-language overview from ISO of what the standard is and why it matters.</p>
+            <div class="text-xs text-slate-400 mt-3 truncate">iso.org/insights-news</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- FOOTER                                                     -->
+  <!-- ========================================================= -->
+  <footer class="border-t border-slate-200 bg-white/70">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="text-sm text-slate-500">
+        <span class="font-bold text-slate-700">Kashif Naveed</span> · AI Governance & ISO/IEC 42001
+      </div>
+      <div class="flex flex-col items-center md:items-end gap-1">
+        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs">
+          <a href="https://www.iso.org/obp/ui/en/#iso:std:iso-iec:42001:ed-1:v1:en"
+             target="_blank" rel="noopener noreferrer"
+             class="text-slate-500 hover:text-violet-600 transition">Read on ISO OBP</a>
+          <a href="https://www.iso.org/standard/42001"
+             target="_blank" rel="noopener noreferrer"
+             class="text-slate-500 hover:text-violet-600 transition">Catalogue page</a>
+          <a href="https://www.iso.org/home/insights-news/resources/iso-42001-explained-what-it-is.html"
+             target="_blank" rel="noopener noreferrer"
+             class="text-slate-500 hover:text-violet-600 transition">ISO 42001 explained</a>
+        </div>
+        <div class="text-xs text-slate-400">
+          Educational summary of ISO/IEC 42001:2023 — not a substitute for the official standard.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const tabs = ["overview", "clauses", "annexa", "pdca", "roadmap"];
+    function showTab(name) {
+      tabs.forEach(t => {
+        document.getElementById("panel-" + t).classList.toggle("hidden", t !== name);
+        const btn = document.getElementById("tab-" + t);
+        btn.classList.toggle("tab-active", t === name);
+      });
+      // re-trigger fade
+      const panel = document.getElementById("panel-" + name);
+      panel.classList.remove("fade-in");
+      void panel.offsetWidth;
+      panel.classList.add("fade-in");
+    }
+  </script>
+</body>
+</html>
