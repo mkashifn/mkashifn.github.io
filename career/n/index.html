@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Migration Strategy — Ireland vs Saudi Arabia</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const correctPassword = "kashif";
+
+      const passwordForm = document.getElementById("passwordForm");
+      const passwordInput = document.getElementById("pagePassword");
+      const passwordError = document.getElementById("passwordError");
+
+      passwordForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const enteredPassword = passwordInput.value;
+
+        if (enteredPassword === correctPassword) {
+          passwordError.classList.add("hidden");
+
+          // Hide password screen
+          document.getElementById("passwordScreen").classList.add("hidden");
+
+          // Show protected content
+          document.getElementById("protectedContent").classList.remove("hidden");
+
+        } else {
+          passwordError.classList.remove("hidden");
+          passwordInput.value = "";
+          passwordInput.focus();
+        }
+      });
+
+    });
+  </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#0f172a",
+            ireland: "#169b62",
+            saudi: "#006c35",
+            gold: "#d4a72c"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+    }
+
+    .score-bar {
+      transition: width 0.7s ease;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+
+      body {
+        background: white !important;
+      }
+
+      .print-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+  <!-- PASSWORD GATE -->
+  <div id="passwordScreen" class="fixed inset-0 z-[9999] bg-slate-950 flex items-center justify-center p-6">
+
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8">
+
+      <div class="text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl bg-emerald-100
+                    flex items-center justify-center text-2xl">
+          🔐
+        </div>
+
+        <h1 class="text-2xl font-bold text-slate-900 mt-5">
+          Protected Page
+        </h1>
+
+        <p class="text-slate-500 mt-2">
+          Enter the password to open the migration strategy.
+        </p>
+      </div>
+
+      <form id="passwordForm" class="mt-6">
+
+        <label for="pagePassword" class="block text-sm font-semibold text-slate-700 mb-2">
+          Password
+        </label>
+
+        <input id="pagePassword" type="password" autocomplete="off" class="w-full rounded-xl border border-slate-300 px-4 py-3
+                text-slate-900 focus:outline-none focus:ring-2
+                focus:ring-emerald-500" placeholder="Enter password" autofocus />
+
+        <button type="submit" class="w-full mt-4 rounded-xl bg-emerald-600
+                hover:bg-emerald-700 text-white font-semibold
+                py-3 transition">
+          Open Page
+        </button>
+
+        <p id="passwordError" class="hidden mt-3 text-sm text-red-600 text-center">
+          Incorrect password. Please try again.
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+  <div id="protectedContent" class="hidden">
+    <!-- HEADER -->
+    <header class="bg-slate-950 text-white">
+      <div class="max-w-7xl mx-auto px-6 py-10">
+
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full
+                      bg-emerald-500/10 border border-emerald-400/30
+                      text-emerald-300 text-sm mb-4">
+              Personalized migration strategy
+            </div>
+
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight">
+              Medical Career & Family Migration Plan
+            </h1>
+
+            <p class="mt-4 text-slate-300 max-w-3xl text-lg">
+              Bangladesh MBBS doctor • 43 years old • approximately 10 years
+              clinical experience • currently working in Maldives • single mother
+              of 11-year-old twins.
+            </p>
+          </div>
+
+          <div class="bg-white/10 rounded-2xl p-5 border border-white/10 min-w-[260px]">
+            <div class="text-sm text-slate-400">Strategic objective</div>
+            <div class="text-xl font-semibold mt-1">
+              Career + Family + Settlement
+            </div>
+            <div class="text-sm text-slate-400 mt-2">
+              Not merely the easiest migration route.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 no-print">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex gap-2 overflow-x-auto py-3 text-sm whitespace-nowrap">
+          <a href="#executive" class="px-3 py-2 rounded-lg hover:bg-slate-100">Summary</a>
+          <a href="#profile" class="px-3 py-2 rounded-lg hover:bg-slate-100">Profile</a>
+          <a href="#comparison" class="px-3 py-2 rounded-lg hover:bg-slate-100">Comparison</a>
+          <a href="#registration" class="px-3 py-2 rounded-lg hover:bg-slate-100">Registration</a>
+          <a href="#finance" class="px-3 py-2 rounded-lg hover:bg-slate-100">5-Year Finance</a>
+          <a href="#family" class="px-3 py-2 rounded-lg hover:bg-slate-100">Children</a>
+          <a href="#timeline" class="px-3 py-2 rounded-lg hover:bg-slate-100">Timeline</a>
+          <a href="#risks" class="px-3 py-2 rounded-lg hover:bg-slate-100">Risks</a>
+          <a href="#recommendation" class="px-3 py-2 rounded-lg hover:bg-slate-100">Recommendation</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <main class="max-w-7xl mx-auto px-4 md:px-6 py-8">
+
+
+      <!-- EXECUTIVE SUMMARY -->
+      <section id="executive" class="mb-12">
+
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 md:p-8">
+
+          <div class="flex items-center justify-between gap-4 flex-wrap">
+            <div>
+              <p class="text-sm font-semibold text-emerald-600 uppercase tracking-wide">
+                Executive conclusion
+              </p>
+
+              <h2 class="text-2xl md:text-3xl font-bold mt-1">
+                Ireland is the strongest long-term target — but only if approached as a
+                medical-registration project.
+              </h2>
+            </div>
+
+            <div class="px-4 py-3 rounded-xl bg-emerald-50 text-emerald-800 font-semibold">
+              Preferred strategy: Ireland clinical route
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5 mt-8">
+
+            <div class="rounded-2xl bg-emerald-50 border border-emerald-100 p-5">
+              <div class="text-sm text-emerald-700 font-semibold">OPTION 1</div>
+              <h3 class="text-xl font-bold mt-1">Saudi Arabia</h3>
+              <p class="text-sm mt-3 text-slate-700">
+                Best for near-term income and lower disruption to your clinical career.
+                Weaker long-term settlement pathway compared with Ireland.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-blue-50 border border-blue-100 p-5">
+              <div class="text-sm text-blue-700 font-semibold">OPTION 2</div>
+              <h3 class="text-xl font-bold mt-1">Ireland — Direct Medical Route</h3>
+              <p class="text-sm mt-3 text-slate-700">
+                Highest strategic value if you can obtain Irish registration and a
+                suitable medical position.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-amber-50 border border-amber-100 p-5">
+              <div class="text-sm text-amber-700 font-semibold">OPTION 3</div>
+              <h3 class="text-xl font-bold mt-1">Ireland — MSc First</h3>
+              <p class="text-sm mt-3 text-slate-700">
+                Potentially useful for academic/employment purposes, but an MSc does
+                not automatically solve the medical-registration problem.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="mt-8 p-5 rounded-2xl bg-slate-900 text-white">
+            <h3 class="font-bold text-lg">Central strategic point</h3>
+            <p class="mt-2 text-slate-300">
+              Your biggest asset is not your age or your MBBS year. It is your
+              combination of medical qualification, substantial clinical experience,
+              current overseas employment and willingness to move internationally.
+              The biggest bottleneck is obtaining the correct Irish medical
+              registration and then securing appropriate employment.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- PROFILE -->
+      <section id="profile" class="mb-12">
+
+        <div class="flex items-end justify-between mb-5">
+          <div>
+            <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+              Personal profile
+            </p>
+            <h2 class="text-2xl md:text-3xl font-bold">How your circumstances affect the decision</h2>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-5">
+            <div class="text-sm text-slate-500">Age</div>
+            <div class="text-3xl font-bold mt-1">43</div>
+            <p class="text-sm mt-2 text-slate-600">
+              Not a reason to abandon Ireland, but time has greater financial value.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-5">
+            <div class="text-sm text-slate-500">MBBS</div>
+            <div class="text-3xl font-bold mt-1">2007</div>
+            <p class="text-sm mt-2 text-slate-600">
+              Older graduation increases the importance of documenting recent practice.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-5">
+            <div class="text-sm text-slate-500">Clinical experience</div>
+            <div class="text-3xl font-bold mt-1">~10 yrs</div>
+            <p class="text-sm mt-2 text-slate-600">
+              A significant asset for employment, subject to specialty and verification.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-5">
+            <div class="text-sm text-slate-500">Children</div>
+            <div class="text-3xl font-bold mt-1">11 + 11</div>
+            <p class="text-sm mt-2 text-slate-600">
+              Family reunification and schooling are major decision variables.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SOURCE CLASSIFICATION -->
+      <section class="mb-12">
+
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+          <h2 class="text-2xl font-bold">
+            Evidence classification
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-5 mt-6">
+
+            <div class="border-l-4 border-emerald-500 bg-emerald-50 p-5 rounded-r-xl">
+              <h3 class="font-bold text-emerald-800">A. Official facts</h3>
+              <p class="text-sm mt-2">
+                Regulatory and immigration rules published by the relevant Irish,
+                Saudi and governmental authorities.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-amber-500 bg-amber-50 p-5 rounded-r-xl">
+              <h3 class="font-bold text-amber-800">B. Estimates</h3>
+              <p class="text-sm mt-2">
+                Salary, living expenses, savings, relocation costs and timelines are
+                planning estimates rather than guaranteed figures.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-red-500 bg-red-50 p-5 rounded-r-xl">
+              <h3 class="font-bold text-red-800">C. Verify personally</h3>
+              <p class="text-sm mt-2">
+                Registration eligibility, specialty classification, exact family
+                permission and recognition of individual experience must be checked
+                against your documents.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- MAIN COMPARISON -->
+      <section id="comparison" class="mb-12">
+
+        <div class="mb-5">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            Three pathways
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold">
+            Side-by-side comparison
+          </h2>
+        </div>
+
+        <div class="overflow-x-auto bg-white rounded-3xl border border-slate-200 shadow-sm">
+
+          <table class="w-full text-sm min-w-[1100px]">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="text-left p-4">Factor</th>
+                <th class="text-left p-4">Saudi Arabia</th>
+                <th class="text-left p-4">Ireland — Direct</th>
+                <th class="text-left p-4">Ireland — MSc First</th>
+              </tr>
+            </thead>
+
+            <tbody class="divide-y divide-slate-200">
+
+              <tr>
+                <td class="p-4 font-semibold">Primary purpose</td>
+                <td class="p-4">Continue medical work</td>
+                <td class="p-4">Become Ireland-registered doctor</td>
+                <td class="p-4">Study first, then seek work/registration</td>
+              </tr>
+
+              <tr class="bg-slate-50">
+                <td class="p-4 font-semibold">Clinical continuity</td>
+                <td class="p-4 text-emerald-700 font-semibold">Excellent</td>
+                <td class="p-4">Potential gap during registration</td>
+                <td class="p-4 text-red-700">Major clinical opportunity cost</td>
+              </tr>
+
+              <tr>
+                <td class="p-4 font-semibold">Main obstacle</td>
+                <td class="p-4">Saudi professional classification/licensing</td>
+                <td class="p-4">Irish Medical Council registration + exams if required</td>
+                <td class="p-4">MSc cost + registration still unresolved</td>
+              </tr>
+
+              <tr class="bg-slate-50">
+                <td class="p-4 font-semibold">English</td>
+                <td class="p-4">Employer/regulator dependent</td>
+                <td class="p-4">Likely critical for registration</td>
+                <td class="p-4">Required for university + potentially registration</td>
+              </tr>
+
+              <tr>
+                <td class="p-4 font-semibold">Initial financial burden</td>
+                <td class="p-4 text-emerald-700">Low–moderate</td>
+                <td class="p-4 text-amber-700">Moderate–high</td>
+                <td class="p-4 text-red-700">High</td>
+              </tr>
+
+              <tr class="bg-slate-50">
+                <td class="p-4 font-semibold">Ability to keep earning clinically</td>
+                <td class="p-4 text-emerald-700 font-bold">High</td>
+                <td class="p-4">Medium/low during transition</td>
+                <td class="p-4 text-red-700">Low</td>
+              </tr>
+
+              <tr>
+                <td class="p-4 font-semibold">Long-term settlement</td>
+                <td class="p-4 text-amber-700">Limited compared with Ireland</td>
+                <td class="p-4 text-emerald-700 font-bold">Strong</td>
+                <td class="p-4 text-emerald-700">Potentially strong</td>
+              </tr>
+
+              <tr class="bg-slate-50">
+                <td class="p-4 font-semibold">Children strategy</td>
+                <td class="p-4">Possible subject to sponsorship rules</td>
+                <td class="p-4 text-emerald-700">Strong long-term option</td>
+                <td class="p-4">More complicated during student phase</td>
+              </tr>
+
+              <tr>
+                <td class="p-4 font-semibold">Overall strategic value</td>
+                <td class="p-4 font-bold">7.0 / 10</td>
+                <td class="p-4 font-bold text-emerald-700">8.6 / 10</td>
+                <td class="p-4 font-bold text-amber-700">5.8 / 10</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </section>
+
+
+      <!-- REGISTRATION -->
+      <section id="registration" class="mb-12">
+
+        <div class="mb-5">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            Medical registration
+          </p>
+          <h2 class="text-2xl md:text-3xl font-bold">
+            The Irish medical-registration issue is the critical path
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6">
+
+          <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+            <h3 class="text-xl font-bold">Likely Irish route</h3>
+
+            <ol class="mt-5 space-y-4">
+
+              <li class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100
+                           text-blue-700 flex items-center justify-center font-bold">1</span>
+                <div>
+                  <div class="font-semibold">Primary-source documentation</div>
+                  <div class="text-sm text-slate-600">
+                    MBBS certificate, transcript, internship evidence,
+                    certificate of good standing and employment documentation.
+                  </div>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100
+             text-blue-700 flex items-center justify-center font-bold">2</span>
+                <div>
+                  <div class="font-semibold">English-language requirement</div>
+
+                  <div class="text-sm text-slate-600">
+                    Determine the exact accepted test and exemption rules applicable
+                    to your education and professional history.
+                  </div>
+
+                  <a href="https://ielts.idp.com/prepare" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-3 px-3 py-2 rounded-lg
+             bg-blue-50 text-blue-700 font-semibold
+             hover:bg-blue-100 transition">
+                    📚 Prepare for IELTS
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100
+                           text-blue-700 flex items-center justify-center font-bold">2</span>
+                <div>
+                  <div class="font-semibold">English-language requirement</div>
+                  <div class="text-sm text-slate-600">
+                    Determine the exact accepted test and exemption rules applicable
+                    to your education and professional history.
+                  </div>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100
+                           text-blue-700 flex items-center justify-center font-bold">3</span>
+                <div>
+                  <div class="font-semibold">Irish Medical Council application</div>
+                  <div class="text-sm text-slate-600">
+                    Establish the correct registration category for a Bangladesh-trained
+                    doctor.
+                  </div>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100
+                           text-blue-700 flex items-center justify-center font-bold">4</span>
+                <div>
+                  <div class="font-semibold">PRES / assessment if required</div>
+                  <div class="text-sm text-slate-600">
+                    Whether you personally need the PRES pathway depends on the
+                    regulator's assessment of your qualifications and circumstances.
+                  </div>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100
+                           text-blue-700 flex items-center justify-center font-bold">5</span>
+                <div>
+                  <div class="font-semibold">Employment</div>
+                  <div class="text-sm text-slate-600">
+                    Once the appropriate registration/work permission route is available,
+                    apply for suitable doctor positions.
+                  </div>
+                </div>
+              </li>
+
+            </ol>
+
+          </div>
+
+
+          <div class="bg-red-50 border border-red-100 rounded-3xl p-6">
+
+            <h3 class="text-xl font-bold text-red-900">
+              Important warning about the MSc route
+            </h3>
+
+            <p class="mt-4 text-slate-700">
+              An MSc should <strong>not</strong> be treated as a substitute for Irish
+              medical registration.
+            </p>
+
+            <div class="mt-5 space-y-3">
+
+              <div class="bg-white rounded-xl p-4">
+                <span class="font-semibold">MSc ≠ medical registration</span>
+                <p class="text-sm mt-1 text-slate-600">
+                  A postgraduate degree normally does not automatically give a
+                  non-EU doctor permission to practise medicine.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-xl p-4">
+                <span class="font-semibold">MSc ≠ guaranteed medical job</span>
+                <p class="text-sm mt-1 text-slate-600">
+                  You could finish the degree and still need to satisfy the
+                  Medical Council requirements.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-xl p-4">
+                <span class="font-semibold">MSc has opportunity cost</span>
+                <p class="text-sm mt-1 text-slate-600">
+                  At age 43, one or two years outside clinical practice can be
+                  financially significant.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- COSTS -->
+      <section class="mb-12">
+
+        <div class="mb-5">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            Initial capital requirement
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold">
+            Planning budget
+          </h2>
+
+          <p class="mt-2 text-slate-600">
+            These are planning ranges, not official quotations. Actual fees must be
+            checked before payment.
+          </p>
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <!-- Saudi -->
+          <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+            <div class="text-sm font-bold text-green-700">OPTION 1</div>
+            <h3 class="text-2xl font-bold mt-1">Saudi Arabia</h3>
+
+            <div class="mt-6 space-y-3">
+
+              <div class="flex justify-between">
+                <span>Licensing/verification</span>
+                <strong>$500–$1,500</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Flights</span>
+                <strong>$300–$700</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Initial housing/deposit</span>
+                <strong>$1,000–$2,500</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Other setup</span>
+                <strong>$500–$1,000</strong>
+              </div>
+
+              <hr>
+
+              <div class="flex justify-between text-lg font-bold">
+                <span>Planning total</span>
+                <span>$2,300–$5,700</span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- Ireland direct -->
+          <div class="bg-white rounded-3xl border-2 border-blue-200 p-6">
+
+            <div class="text-sm font-bold text-blue-700">OPTION 2</div>
+            <h3 class="text-2xl font-bold mt-1">Ireland — Direct</h3>
+
+            <div class="mt-6 space-y-3">
+
+              <div class="flex justify-between">
+                <span>English test</span>
+                <strong>€250–€400</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Registration/verification</span>
+                <strong>€500–€2,000+</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Potential exam pathway</span>
+                <strong>€1,000–€3,000+</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Visa / permits</span>
+                <strong>€100s–€1,000+</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Travel + initial setup</span>
+                <strong>€2,000–€5,000+</strong>
+              </div>
+
+              <hr>
+
+              <div class="flex justify-between text-lg font-bold">
+                <span>Planning total</span>
+                <span>€4,000–€11,000+</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- MSc -->
+          <div class="bg-white rounded-3xl border border-amber-200 p-6">
+
+            <div class="text-sm font-bold text-amber-700">OPTION 3</div>
+            <h3 class="text-2xl font-bold mt-1">Ireland — MSc</h3>
+
+            <div class="mt-6 space-y-3">
+
+              <div class="flex justify-between">
+                <span>Tuition</span>
+                <strong>€12k–€30k+</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Visa/insurance/etc.</span>
+                <strong>€500–€2,000+</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Travel</span>
+                <strong>€500–€1,000+</strong>
+              </div>
+
+              <div class="flex justify-between">
+                <span>Living expenses</span>
+                <strong>€15k–€25k+/year</strong>
+              </div>
+
+              <hr>
+
+              <div class="flex justify-between text-lg font-bold">
+                <span>Potential first-year total</span>
+                <span>€28k–€55k+</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- FIVE YEAR FINANCIAL -->
+      <section id="finance" class="mb-12 print-break">
+
+        <div class="mb-5">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            Financial model
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold">
+            Illustrative 5-year financial comparison
+          </h2>
+
+          <p class="mt-2 text-slate-600">
+            This model is deliberately approximate. It is intended to compare the
+            economic shape of the options rather than predict exact take-home pay.
+          </p>
+        </div>
+
+
+        <div class="overflow-x-auto bg-white rounded-3xl border border-slate-200">
+
+          <table class="w-full min-w-[1000px] text-sm">
+
+            <thead class="bg-slate-900 text-white">
+              <tr>
+                <th class="p-4 text-left">Year</th>
+                <th class="p-4 text-left">Saudi — estimated savings</th>
+                <th class="p-4 text-left">Ireland direct — estimated savings</th>
+                <th class="p-4 text-left">Ireland MSc — estimated net position</th>
+              </tr>
+            </thead>
+
+            <tbody class="divide-y divide-slate-200">
+
+              <tr>
+                <td class="p-4 font-bold">Year 1</td>
+                <td class="p-4 text-emerald-700">+$15k to +$25k</td>
+                <td class="p-4 text-amber-700">-$5k to +$10k</td>
+                <td class="p-4 text-red-700">-$25k to -$45k</td>
+              </tr>
+
+              <tr class="bg-slate-50">
+                <td class="p-4 font-bold">Year 2</td>
+                <td class="p-4 text-emerald-700">+$15k to +$25k</td>
+                <td class="p-4">+$5k to +$20k</td>
+                <td class="p-4 text-red-700">-$5k to +$5k</td>
+              </tr>
+
+              <tr>
+                <td class="p-4 font-bold">Year 3</td>
+                <td class="p-4 text-emerald-700">+$15k to +$25k</td>
+                <td class="p-4 text-emerald-700">+$15k to +$30k</td>
+                <td class="p-4">+$5k to +$15k</td>
+              </tr>
+
+              <tr class="bg-slate-50">
+                <td class="p-4 font-bold">Year 4</td>
+                <td class="p-4 text-emerald-700">+$15k to +$25k</td>
+                <td class="p-4 text-emerald-700">+$15k to +$30k</td>
+                <td class="p-4 text-emerald-700">+$10k to +$25k</td>
+              </tr>
+
+              <tr>
+                <td class="p-4 font-bold">Year 5</td>
+                <td class="p-4 text-emerald-700">+$15k to +$25k</td>
+                <td class="p-4 text-emerald-700">+$20k to +$35k</td>
+                <td class="p-4 text-emerald-700">+$15k to +$30k</td>
+              </tr>
+
+              <tr class="bg-slate-900 text-white font-bold">
+                <td class="p-4">Illustrative 5-year cumulative</td>
+                <td class="p-4">+$75k–$125k</td>
+                <td class="p-4">+$50k–$125k</td>
+                <td class="p-4">-$0k–+$30k</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-2xl p-5 text-sm">
+          <strong>Interpretation:</strong>
+          Saudi Arabia may win the early cash-flow race. Ireland can become the
+          stronger lifetime strategy because of career development and settlement
+          potential. The MSc route carries the largest opportunity cost.
+        </div>
+
+      </section>
+
+
+      <!-- SCORES -->
+      <section id="risks" class="mb-12">
+
+        <div class="mb-6">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            Strategic scoring
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold">
+            Personalized scorecard
+          </h2>
+        </div>
+
+
+        <div class="grid lg:grid-cols-3 gap-6">
+
+          <!-- Saudi -->
+          <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+            <h3 class="text-2xl font-bold">Saudi Arabia</h3>
+
+            <div class="mt-6 space-y-5">
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Family</span><strong>7/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-green-600 rounded-full score-bar" style="width:70%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Career</span><strong>8/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-green-600 rounded-full" style="width:80%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Settlement</span><strong>4/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-amber-500 rounded-full" style="width:40%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Financial safety</span><strong>9/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-green-600 rounded-full" style="width:90%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Risk</span><strong>4/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-amber-500 rounded-full" style="width:40%"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Ireland Direct -->
+          <div class="bg-white rounded-3xl border-2 border-blue-200 p-6">
+
+            <div class="flex items-center justify-between">
+              <h3 class="text-2xl font-bold">Ireland — Direct</h3>
+              <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                Preferred
+              </span>
+            </div>
+
+            <div class="mt-6 space-y-5">
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Family</span><strong>9/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-blue-600 rounded-full" style="width:90%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Career</span><strong>9/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-blue-600 rounded-full" style="width:90%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Settlement</span><strong>9/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-blue-600 rounded-full" style="width:90%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Financial safety</span><strong>6/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-blue-600 rounded-full" style="width:60%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Risk</span><strong>6/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-amber-500 rounded-full" style="width:60%"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- MSc -->
+          <div class="bg-white rounded-3xl border border-amber-200 p-6">
+
+            <h3 class="text-2xl font-bold">Ireland — MSc First</h3>
+
+            <div class="mt-6 space-y-5">
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Family</span><strong>6/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-amber-500 rounded-full" style="width:60%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Career</span><strong>6/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-amber-500 rounded-full" style="width:60%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Settlement</span><strong>7/10</strong>
+                </div>
+                <div class="h-2 bg-emerald-500 rounded-full" style="width:70%"></div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Financial safety</span><strong>3/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-red-500 rounded-full" style="width:30%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>Risk</span><strong>8/10</strong>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full">
+                  <div class="h-2 bg-red-500 rounded-full" style="width:80%"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CHILDREN -->
+      <section id="family" class="mb-12">
+
+        <div class="mb-5">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            Family strategy
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold">
+            Your twins materially change the optimal strategy
+          </h2>
+        </div>
+
+
+        <div class="grid lg:grid-cols-3 gap-6">
+
+          <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+            <div class="text-3xl">🇸🇦</div>
+
+            <h3 class="text-xl font-bold mt-4">
+              Saudi Arabia
+            </h3>
+
+            <p class="mt-3 text-slate-600">
+              Potentially straightforward if your employment contract and sponsorship
+              arrangements allow dependent residence, but the children remain tied
+              to your residence status.
+            </p>
+
+            <div class="mt-5 p-4 bg-amber-50 rounded-xl text-sm">
+              <strong>Key issue:</strong>
+              verify dependent eligibility, sponsorship income requirements,
+              school fees and insurance before moving the children.
+            </div>
+
+          </div>
+
+
+          <div class="bg-white rounded-3xl border-2 border-blue-200 p-6">
+
+            <div class="text-3xl">🇮🇪</div>
+
+            <h3 class="text-xl font-bold mt-4">
+              Ireland — Direct Medical
+            </h3>
+
+            <p class="mt-3 text-slate-600">
+              Strongest long-term family strategy if you obtain appropriate
+              employment permission and can establish a stable residence.
+            </p>
+
+            <div class="mt-5 p-4 bg-emerald-50 rounded-xl text-sm">
+              <strong>Major advantage:</strong>
+              English-speaking education system, European environment and a
+              potential long-term residence/citizenship pathway.
+            </div>
+
+          </div>
+
+
+          <div class="bg-white rounded-3xl border border-amber-200 p-6">
+
+            <div class="text-3xl">🎓</div>
+
+            <h3 class="text-xl font-bold mt-4">
+              Ireland — MSc
+            </h3>
+
+            <p class="mt-3 text-slate-600">
+              Student immigration rules can make family arrangements considerably
+              more complicated than arriving through an employment route.
+            </p>
+
+            <div class="mt-5 p-4 bg-red-50 rounded-xl text-sm">
+              <strong>Concern:</strong>
+              do not assume that enrolling in an MSc means your twins can simply
+              accompany you on the same terms as dependants of a worker.
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SCHOOLING -->
+      <section class="mb-12">
+
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+          <h2 class="text-2xl font-bold">
+            Schooling considerations for the twins
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-5 mt-6">
+
+            <div class="p-5 rounded-2xl bg-slate-50">
+              <h3 class="font-bold">Bangladesh initially</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Lowest disruption and cost while you complete registration,
+                examinations and employment preparation.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-blue-50">
+              <h3 class="font-bold">Ireland after stability</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Consider moving the children after your employment, immigration
+                status and housing are secure rather than immediately.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-amber-50">
+              <h3 class="font-bold">Avoid premature relocation</h3>
+              <p class="text-sm text-slate-600 mt-2">
+                Moving two children before your own income and immigration
+                position is established increases financial and emotional risk.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- TIMELINE -->
+      <section id="timeline" class="mb-12">
+
+        <div class="mb-5">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            Expected timeline
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold">
+            Realistic pathway planning
+          </h2>
+        </div>
+
+
+        <div class="grid lg:grid-cols-3 gap-6">
+
+          <!-- Saudi -->
+          <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+            <h3 class="text-xl font-bold">Saudi Arabia</h3>
+
+            <div class="mt-6 space-y-5">
+
+              <div>
+                <span class="text-xs font-bold text-green-700">MONTH 0–2</span>
+                <p class="text-sm mt-1">Credential verification and licensing process.</p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-green-700">MONTH 2–4</span>
+                <p class="text-sm mt-1">Job search, interviews and employment contract.</p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-green-700">MONTH 3–6</span>
+                <p class="text-sm mt-1">Relocation and start clinical work.</p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-green-700">MONTH 6–12</span>
+                <p class="text-sm mt-1">Assess whether children should join you.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Ireland -->
+          <div class="bg-white rounded-3xl border-2 border-blue-200 p-6">
+
+            <h3 class="text-xl font-bold">Ireland — Direct</h3>
+
+            <div class="mt-6 space-y-5">
+
+              <div>
+                <span class="text-xs font-bold text-blue-700">MONTH 0–3</span>
+                <p class="text-sm mt-1">
+                  English preparation, document collection and eligibility assessment.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-blue-700">MONTH 3–9</span>
+                <p class="text-sm mt-1">
+                  Registration application and required examination/assessment route.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-blue-700">MONTH 6–15</span>
+                <p class="text-sm mt-1">
+                  Job search and employment permit/visa process.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-blue-700">MONTH 12–24</span>
+                <p class="text-sm mt-1">
+                  Establish clinical employment and then plan family relocation.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- MSc -->
+          <div class="bg-white rounded-3xl border border-amber-200 p-6">
+
+            <h3 class="text-xl font-bold">Ireland — MSc</h3>
+
+            <div class="mt-6 space-y-5">
+
+              <div>
+                <span class="text-xs font-bold text-amber-700">MONTH 0–6</span>
+                <p class="text-sm mt-1">University applications, admission and visa.</p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-amber-700">YEAR 1</span>
+                <p class="text-sm mt-1">
+                  Full-time study and significant financial expenditure.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-amber-700">YEAR 1–2</span>
+                <p class="text-sm mt-1">
+                  Continue medical registration process separately.
+                </p>
+              </div>
+
+              <div>
+                <span class="text-xs font-bold text-amber-700">YEAR 2–3</span>
+                <p class="text-sm mt-1">
+                  Attempt transition into qualifying employment or medicine.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- EXPERIENCE -->
+      <section class="mb-12">
+
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+          <h2 class="text-2xl font-bold">
+            How your overseas experience should be used
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-6">
+
+            <div>
+              <h3 class="font-bold text-lg">Your Maldives experience is valuable</h3>
+
+              <ul class="mt-4 space-y-3 text-sm text-slate-600">
+                <li>✓ Demonstrates recent clinical activity.</li>
+                <li>✓ Helps counter concerns associated with an older graduation year.</li>
+                <li>✓ Can support employment history and good-standing documentation.</li>
+                <li>✓ Shows international adaptability.</li>
+                <li>✓ May strengthen job applications if duties match the target post.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-bold text-lg">But recognition is not automatic</h3>
+
+              <ul class="mt-4 space-y-3 text-sm text-slate-600">
+                <li>• Specialty equivalence must be established.</li>
+                <li>• Job title does not automatically equal Irish specialist status.</li>
+                <li>• Clinical experience must be documented.</li>
+                <li>• References may need to come from appropriate authorities.</li>
+                <li>• Regulatory decisions are individual.</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- AGE -->
+      <section class="mb-12">
+
+        <div class="bg-slate-900 text-white rounded-3xl p-7">
+
+          <h2 class="text-2xl font-bold">
+            What does being 43 change?
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6 mt-6">
+
+            <div>
+              <div class="text-emerald-400 font-bold">Positive</div>
+              <p class="text-slate-300 text-sm mt-2">
+                You have maturity, substantial clinical exposure and international
+                work experience.
+              </p>
+            </div>
+
+            <div>
+              <div class="text-amber-400 font-bold">Neutral</div>
+              <p class="text-slate-300 text-sm mt-2">
+                Age itself should not be treated as an automatic barrier to pursuing
+                the medical-registration route.
+              </p>
+            </div>
+
+            <div>
+              <div class="text-red-400 font-bold">Negative</div>
+              <p class="text-slate-300 text-sm mt-2">
+                The opportunity cost of spending 1–2 years on a degree that does not
+                lead to medical registration is much higher now than at age 25.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- RISKS -->
+      <section class="mb-12">
+
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">
+          Major risks
+        </h2>
+
+        <div class="space-y-4">
+
+          <div class="bg-white rounded-2xl border border-red-200 p-5">
+            <div class="flex gap-4">
+              <div class="text-red-600 font-bold text-xl">01</div>
+              <div>
+                <h3 class="font-bold">Irish registration may take longer than expected</h3>
+                <p class="text-sm text-slate-600 mt-1">
+                  Document problems, examination requirements and processing times
+                  can materially change the timeline.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-red-200 p-5">
+            <div class="flex gap-4">
+              <div class="text-red-600 font-bold text-xl">02</div>
+              <div>
+                <h3 class="font-bold">You may obtain registration but struggle for the preferred job</h3>
+                <p class="text-sm text-slate-600 mt-1">
+                  Registration and employment are separate problems.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-red-200 p-5">
+            <div class="flex gap-4">
+              <div class="text-red-600 font-bold text-xl">03</div>
+              <div>
+                <h3 class="font-bold">Housing costs in Ireland</h3>
+                <p class="text-sm text-slate-600 mt-1">
+                  Rent and accommodation availability can significantly reduce
+                  initial savings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-red-200 p-5">
+            <div class="flex gap-4">
+              <div class="text-red-600 font-bold text-xl">04</div>
+              <div>
+                <h3 class="font-bold">MSc sunk-cost risk</h3>
+                <p class="text-sm text-slate-600 mt-1">
+                  You could spend substantial money on tuition and living costs
+                  without solving the medical-registration problem.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- WHAT IF REGISTRATION FAILS -->
+      <section class="mb-12">
+
+        <div class="bg-red-950 text-white rounded-3xl p-7">
+
+          <h2 class="text-2xl font-bold">
+            What if Irish medical registration does not work?
+          </h2>
+
+          <p class="mt-4 text-red-100">
+            This contingency must be designed <strong>before</strong> leaving
+            clinical employment in the Maldives.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-5 mt-6">
+
+            <div class="bg-white/10 rounded-2xl p-5">
+              <h3 class="font-bold">Plan A</h3>
+              <p class="text-sm text-red-100 mt-2">
+                Irish medical registration + doctor employment.
+              </p>
+            </div>
+
+            <div class="bg-white/10 rounded-2xl p-5">
+              <h3 class="font-bold">Plan B</h3>
+              <p class="text-sm text-red-100 mt-2">
+                Continue clinical employment in another Gulf/international market.
+              </p>
+            </div>
+
+            <div class="bg-white/10 rounded-2xl p-5">
+              <h3 class="font-bold">Plan C</h3>
+              <p class="text-sm text-red-100 mt-2">
+                Non-clinical healthcare career only if it provides a credible
+                long-term immigration and financial pathway.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ACTION PLAN -->
+      <section class="mb-12">
+
+        <div class="mb-5">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">
+            Action plan
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold">
+            What I would do in your position
+          </h2>
+        </div>
+
+
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+          <div class="space-y-6">
+
+            <div class="flex gap-5">
+              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-slate-900 text-white
+                        flex items-center justify-center font-bold">1</div>
+
+              <div>
+                <h3 class="font-bold text-lg">
+                  Do not resign from the Maldives job yet.
+                </h3>
+
+                <p class="text-slate-600 mt-1">
+                  Preserve income and recent clinical experience while investigating
+                  Ireland.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex gap-5">
+              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-slate-900 text-white
+                        flex items-center justify-center font-bold">2</div>
+
+              <div>
+                <h3 class="font-bold text-lg">
+                  Establish your exact Irish Medical Council route first.
+                </h3>
+
+                <p class="text-slate-600 mt-1">
+                  This is the single most important investigation.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex gap-5">
+              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-slate-900 text-white
+                        flex items-center justify-center font-bold">3</div>
+
+              <div>
+                <h3 class="font-bold text-lg">
+                  Complete English testing/documentation while employed.
+                </h3>
+
+                <p class="text-slate-600 mt-1">
+                  Do not use a costly MSc as a substitute for this.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex gap-5">
+              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-slate-900 text-white
+                        flex items-center justify-center font-bold">4</div>
+
+              <div>
+                <h3 class="font-bold text-lg">
+                  Start Irish registration/examination steps.
+                </h3>
+
+                <p class="text-slate-600 mt-1">
+                  Keep the Maldives position until your pathway has a high probability
+                  of success.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex gap-5">
+              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-slate-900 text-white
+                        flex items-center justify-center font-bold">5</div>
+
+              <div>
+                <h3 class="font-bold text-lg">
+                  Apply for Irish medical jobs in parallel.
+                </h3>
+
+                <p class="text-slate-600 mt-1">
+                  Do not wait until the very end of registration to understand the
+                  employment market.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex gap-5">
+              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-slate-900 text-white
+                        flex items-center justify-center font-bold">6</div>
+
+              <div>
+                <h3 class="font-bold text-lg">
+                  Move yourself first if necessary.
+                </h3>
+
+                <p class="text-slate-600 mt-1">
+                  Establish employment, housing and immigration stability before
+                  moving the twins.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="flex gap-5">
+              <div class="w-10 h-10 flex-shrink-0 rounded-full bg-slate-900 text-white
+                        flex items-center justify-center font-bold">7</div>
+
+              <div>
+                <h3 class="font-bold text-lg">
+                  Bring the children once the foundation is secure.
+                </h3>
+
+                <p class="text-slate-600 mt-1">
+                  Their schooling should be planned around your actual immigration
+                  status rather than assumptions.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- RECOMMENDATION -->
+      <section id="recommendation" class="mb-12">
+
+        <div class="bg-gradient-to-br from-emerald-700 to-emerald-950
+                  text-white rounded-3xl p-7 md:p-10">
+
+          <div class="max-w-4xl">
+
+            <div class="text-emerald-300 text-sm font-bold uppercase tracking-wide">
+              Personalized recommendation
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-bold mt-2">
+              Pursue Ireland directly — while keeping Saudi Arabia as your financial
+              safety net.
+            </h2>
+
+            <p class="mt-5 text-emerald-50 text-lg leading-relaxed">
+              For your particular circumstances, I would not make the MSc the default
+              route. I would first investigate and pursue the Irish medical-registration
+              pathway while continuing clinical work. Saudi Arabia is the stronger
+              fallback if the Irish registration route becomes impractical.
+            </p>
+
+
+            <div class="grid md:grid-cols-3 gap-5 mt-8">
+
+              <div class="bg-white/10 rounded-2xl p-5">
+                <div class="text-emerald-300 font-bold">Priority 1</div>
+                <div class="font-bold text-xl mt-1">Ireland Direct</div>
+                <p class="text-sm text-emerald-100 mt-2">
+                  Best long-term combination of medical career, family life and
+                  settlement potential.
+                </p>
+              </div>
+
+              <div class="bg-white/10 rounded-2xl p-5">
+                <div class="text-emerald-300 font-bold">Priority 2</div>
+                <div class="font-bold text-xl mt-1">Saudi Arabia</div>
+                <p class="text-sm text-emerald-100 mt-2">
+                  Excellent income-preservation strategy and useful backup.
+                </p>
+              </div>
+
+              <div class="bg-white/10 rounded-2xl p-5">
+                <div class="text-emerald-300 font-bold">Priority 3</div>
+                <div class="font-bold text-xl mt-1">MSc</div>
+                <p class="text-sm text-emerald-100 mt-2">
+                  Only choose after proving that the specific MSc has a clear
+                  employment/immigration purpose.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- FINAL SCORE -->
+      <section class="mb-12">
+
+        <div class="bg-white rounded-3xl border border-slate-200 p-6 md:p-8">
+
+          <h2 class="text-2xl font-bold">
+            Final decision matrix
+          </h2>
+
+          <div class="overflow-x-auto mt-6">
+
+            <table class="w-full min-w-[800px] text-sm">
+
+              <thead>
+                <tr class="border-b border-slate-200">
+                  <th class="text-left p-3">Criterion</th>
+                  <th class="p-3">Saudi</th>
+                  <th class="p-3">Ireland Direct</th>
+                  <th class="p-3">Ireland MSc</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-slate-100">
+
+                <tr>
+                  <td class="p-3">Short-term income</td>
+                  <td class="p-3 text-center">★★★★★</td>
+                  <td class="p-3 text-center">★★★</td>
+                  <td class="p-3 text-center">★</td>
+                </tr>
+
+                <tr>
+                  <td class="p-3">Clinical continuity</td>
+                  <td class="p-3 text-center">★★★★★</td>
+                  <td class="p-3 text-center">★★★★</td>
+                  <td class="p-3 text-center">★★</td>
+                </tr>
+
+                <tr>
+                  <td class="p-3">Long-term medical career</td>
+                  <td class="p-3 text-center">★★★★</td>
+                  <td class="p-3 text-center">★★★★★</td>
+                  <td class="p-3 text-center">★★★</td>
+                </tr>
+
+                <tr>
+                  <td class="p-3">Settlement potential</td>
+                  <td class="p-3 text-center">★★</td>
+                  <td class="p-3 text-center">★★★★★</td>
+                  <td class="p-3 text-center">★★★★</td>
+                </tr>
+
+                <tr>
+                  <td class="p-3">Children's long-term prospects</td>
+                  <td class="p-3 text-center">★★★</td>
+                  <td class="p-3 text-center">★★★★★</td>
+                  <td class="p-3 text-center">★★★</td>
+                </tr>
+
+                <tr>
+                  <td class="p-3">Financial risk</td>
+                  <td class="p-3 text-center">★★★★★</td>
+                  <td class="p-3 text-center">★★★</td>
+                  <td class="p-3 text-center">★</td>
+                </tr>
+
+                <tr class="bg-slate-900 text-white font-bold">
+                  <td class="p-3">Overall strategic ranking</td>
+                  <td class="p-3 text-center">#2</td>
+                  <td class="p-3 text-center text-emerald-300">#1</td>
+                  <td class="p-3 text-center">#3</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SOURCES -->
+      <section class="mb-12">
+
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+
+          <h2 class="text-2xl font-bold">
+            Official sources to verify before acting
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-4 mt-6">
+
+            <a href="https://www.medicalcouncil.ie/registration-applications/first-time-applicants/general-registration-non-eu-eea-trained-doctors.html"
+              target="_blank" class="p-4 rounded-xl bg-blue-50 hover:bg-blue-100 transition">
+              <div class="font-bold">Irish Medical Council</div>
+              <div class="text-sm text-slate-600 mt-1">
+                Non-EU/EEA trained doctor registration
+              </div>
+            </a>
+
+            <a href="https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/critical-skills-employment-permit/"
+              target="_blank" class="p-4 rounded-xl bg-blue-50 hover:bg-blue-100 transition">
+              <div class="font-bold">Ireland Employment Permits</div>
+              <div class="text-sm text-slate-600 mt-1">
+                Critical Skills Employment Permit information
+              </div>
+            </a>
+
+            <a href="https://www.irishimmigration.ie/" target="_blank"
+              class="p-4 rounded-xl bg-blue-50 hover:bg-blue-100 transition">
+              <div class="font-bold">Immigration Service Delivery</div>
+              <div class="text-sm text-slate-600 mt-1">
+                Irish immigration and family information
+              </div>
+            </a>
+
+            <a href="https://www.irishimmigration.ie/how-to-become-an-irish-citizen-guide/" target="_blank"
+              class="p-4 rounded-xl bg-blue-50 hover:bg-blue-100 transition">
+              <div class="font-bold">Irish Citizenship</div>
+              <div class="text-sm text-slate-600 mt-1">
+                Naturalisation information
+              </div>
+            </a>
+
+            <a href="https://scfhs.org.sa/en" target="_blank"
+              class="p-4 rounded-xl bg-green-50 hover:bg-green-100 transition">
+              <div class="font-bold">Saudi Commission for Health Specialties</div>
+              <div class="text-sm text-slate-600 mt-1">
+                Saudi professional classification and registration
+              </div>
+            </a>
+
+            <a href="https://my.gov.sa/" target="_blank"
+              class="p-4 rounded-xl bg-green-50 hover:bg-green-100 transition">
+              <div class="font-bold">Saudi Government Portal</div>
+              <div class="text-sm text-slate-600 mt-1">
+                Residence and government services
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- COLLAPSED PROMPT AT END -->
+      <section class="mb-12">
+
+        <details class="bg-slate-900 text-white rounded-2xl overflow-hidden">
+
+          <summary class="cursor-pointer px-6 py-5 font-semibold
+                        hover:bg-slate-800 transition">
+            🔐 Show research/update prompt
+          </summary>
+
+          <div class="px-6 pb-6 pt-2">
+
+            <div class="bg-black/40 rounded-xl p-5">
+
+              <label class="block text-sm font-semibold mb-2">
+                Research prompt
+              </label>
+
+              <textarea class="w-full min-h-[300px] bg-slate-950 border border-slate-700
+                     rounded-xl p-4 text-sm text-slate-200 font-mono
+                     focus:outline-none focus:ring-2 focus:ring-emerald-500" spellcheck="false">Act as a medical migration and international career researcher.
+
+Reassess the following case using CURRENT official sources only where possible:
+
+A 43-year-old Bangladeshi female doctor.
+MBBS completed in 2007.
+Approximately 10 years clinical experience.
+FCPS Part 1 in Obstetrics & Gynaecology, without Part 2.
+Currently working clinically as a doctor in Maldives.
+Single mother.
+Twin children, one boy and one girl, both age 11, currently studying Year 4 in Bangladesh.
+
+Compare:
+
+1. Saudi Arabia — continue working as a doctor.
+2. Ireland — pursue medical registration directly.
+3. Ireland — study an MSc first and then attempt transition to employment/medical practice.
+
+Investigate and distinguish:
+
+A. Confirmed official facts.
+B. Reasonable estimates.
+C. Items requiring individual verification.
+
+Verify current:
+- Irish Medical Council registration pathway for Bangladesh-trained doctors.
+- PRES/examination requirements.
+- English-language requirements.
+- Recognition of MBBS and internship.
+- Recognition of Maldives clinical experience.
+- FCPS Part 1 relevance.
+- Specialist/non-specialist registration possibilities.
+- Irish doctor salary scales.
+- Employment permit requirements.
+- Critical Skills Employment Permit.
+- Family reunification.
+- Dependent-child rules.
+- Student immigration rules.
+- Graduate permission.
+- Long-term residence.
+- Citizenship/naturalisation.
+- Schooling for dependent children.
+- Saudi professional classification.
+- Saudi licensing requirements.
+- Saudi family/dependent residence rules.
+- Saudi doctor salaries.
+
+Calculate a realistic 5-year financial model using conservative, middle and optimistic scenarios.
+
+Account for:
+- age 43
+- children
+- single-parent responsibilities
+- opportunity cost of leaving clinical employment
+- tuition
+- registration fees
+- examinations
+- visa fees
+- flights
+- accommodation deposits
+- housing
+- school costs
+- health insurance
+- taxes
+- realistic living costs
+- likely salary progression.
+
+Do not assume that an MSc creates medical registration.
+
+Explicitly answer:
+"If Irish medical registration cannot be obtained, what is the worst-case outcome of each pathway?"
+
+Give:
+1. Executive recommendation.
+2. Comparison table.
+3. Registration pathway.
+4. Timeline.
+5. Initial capital required.
+6. Five-year financial comparison.
+7. Monthly savings estimate.
+8. Family/children analysis.
+9. Immigration/settlement analysis.
+10. Risk score.
+11. Family score.
+12. Career score.
+13. Settlement score.
+14. Opportunity-cost analysis.
+15. Contingency plan.
+16. Step-by-step action plan.
+
+Use exact dates and current rules.
+Cite official sources wherever possible.
+Do not present estimates as facts.
+Flag anything that must be individually confirmed with the relevant regulator or immigration authority.</textarea>
+
+            </div>
+
+          </div>
+
+        </details>
+
+      </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400">
+
+      <div class="max-w-7xl mx-auto px-6 py-8">
+
+        <div class="flex flex-col md:flex-row justify-between gap-4">
+
+          <div>
+            <div class="text-white font-semibold">
+              Medical Migration Strategy
+            </div>
+
+            <div class="text-sm mt-1">
+              Personalized planning framework — not legal, immigration or medical-regulatory advice.
+            </div>
+          </div>
+
+          <div class="text-sm">
+            Last planning date: August 2026
+          </div>
+
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-slate-800 text-xs leading-relaxed">
+          Regulatory, immigration, salary, tuition, visa and family-reunification
+          rules can change. Before paying fees, resigning from employment or moving
+          the children, verify the current requirements directly with the relevant
+          government, medical regulator, university and employer.
+        </div>
+
+      </div>
+
+    </footer>
+  </div>
+
+
+  <!-- Small interactive enhancement -->
+  <script>
+    // Smoothly animate score bars when they enter the viewport.
+    const bars = document.querySelectorAll('.score-bar');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const width = entry.target.style.width;
+            entry.target.style.width = "0%";
+
+            setTimeout(() => {
+              entry.target.style.width = width;
+            }, 100);
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    bars.forEach(bar => observer.observe(bar));
+  </script>
+
+</body>
+
+</html>
