@@ -4,65 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Solutions</title>
-  <meta name="description" content="Industry-grouped AI solutions — packaged, deployable AI for real businesses. Starting with SEO & Marketing." />
+  <meta name="description" content="AI solutions grouped by industry — packaged, deployable AI for real businesses. Pick your industry to see the bundle." />
 
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          boxShadow: {
-            soft: "0 20px 60px rgba(15,23,42,.08)",
-            card: "0 10px 30px rgba(15,23,42,.06)"
-          }
-        }
-      }
-    }
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
   </script>
-
   <style>
     html { scroll-behavior: smooth; }
-
-    body {
-      background:
-        radial-gradient(circle at 10% 0%, rgba(16,185,129,.08), transparent 30%),
-        radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%),
-        #f8fafc;
-    }
-
-    .grid-bg {
-      background-image:
-        linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(16,185,129,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
     .card { transition: all .2s ease; }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(15,23,42,.12);
-    }
-
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
     .fade-in { animation: fadeIn .35s ease; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 
 <body class="text-slate-800">
 
-  <!-- ========================================================= -->
-  <!-- HEADER                                                    -->
-  <!-- ========================================================= -->
+  <!-- HEADER -->
   <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
     <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
 
       <div class="flex items-center gap-3 shrink-0">
-        <img src="/assets/kn-photo.png" alt="Kashif Naveed"
-             class="w-11 h-11 rounded-full object-cover ring-2 ring-emerald-100" />
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-11 h-11 rounded-full object-cover ring-2 ring-emerald-100" />
         <div class="font-bold text-slate-900">Kashif Naveed</div>
       </div>
 
@@ -77,18 +48,13 @@
       </div>
 
       <div class="md:ml-auto shrink-0">
-        <a href="/"
-           class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-2.5 font-bold text-sm text-slate-700 hover:border-emerald-300 transition">
-          ← Home
-        </a>
+        <a href="/" class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-2.5 font-bold text-sm text-slate-700 hover:border-emerald-300 transition">← Home</a>
       </div>
 
     </div>
   </header>
 
-  <!-- ========================================================= -->
-  <!-- HERO                                                       -->
-  <!-- ========================================================= -->
+  <!-- HERO -->
   <section class="grid-bg border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-6 py-14 md:py-20 text-center fade-in">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold mb-5">
@@ -100,186 +66,90 @@
         <span class="text-emerald-600">your industry</span>,
         not the other way around.
       </h2>
-
       <p class="mt-5 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-        Each solution below is fully independent — deploy one, or bundle several into an
-        end-to-end system. Grouped by industry so you can start where it hurts most.
+        Pick an industry to see its bundle. Every solution inside is fully independent — deploy one,
+        or combine several into an end-to-end system.
       </p>
     </div>
   </section>
 
-  <!-- ========================================================= -->
-  <!-- INDUSTRY: SEO & MARKETING                                 -->
-  <!-- ========================================================= -->
-  <section id="seo-marketing" class="max-w-7xl mx-auto px-6 py-16 md:py-20">
-
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-      <div>
-        <div class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider mb-2">Industry 01</div>
-        <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-950">SEO &amp; Marketing</h3>
-        <p class="text-sm text-slate-500 mt-2 max-w-2xl">
-          A bundle for agencies and in-house teams: research, produce, optimise, distribute,
-          and measure — every stage of the funnel with an AI teammate.
-        </p>
-      </div>
-      <span class="inline-flex items-center gap-2 self-start md:self-auto px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-600">
-        6 solutions
-      </span>
+  <!-- INDUSTRIES -->
+  <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="text-center mb-12">
+      <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Choose your industry</div>
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-950">Industries</h3>
     </div>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-      <!-- SEO Content Engine -->
-      <a href="/ai-solutions/seo-content-engine.html"
+      <!-- SEO & MARKETING -->
+      <a href="/ai-solutions/seo-marketing/"
          class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
-        <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <path d="M4 4h11l5 5v11a0 0 0 0 1 0 0H4z"/><path d="M14 4v5h5"/><path d="M8 13h8M8 17h5"/>
-          </svg>
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>
+            </svg>
+          </div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-1">6 solutions</span>
         </div>
-        <h4 class="text-lg font-bold text-slate-950 mb-2">SEO Content Engine</h4>
+        <h4 class="text-lg font-bold text-slate-950 mb-2">SEO &amp; Marketing</h4>
         <p class="text-sm text-slate-600 leading-relaxed flex-1">
-          Brief-to-draft long-form content that ranks — outline, write, internally link, and
-          optimise against the live SERP, on brand voice.
+          Research, produce, optimise, distribute and measure — content, keyword intelligence,
+          technical audits, outreach, social, and paid.
         </p>
         <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 group-hover:gap-2.5 transition-all">
-          View solution →
+          View bundle →
         </span>
       </a>
 
-      <!-- Keyword & SERP Intelligence -->
-      <a href="/ai-solutions/keyword-serp-intelligence.html"
-         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
-        <div class="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/><path d="M7.5 10.5h6M10.5 7.5v6"/>
-          </svg>
+      <!-- COMING SOON PLACEHOLDERS -->
+      <div class="border border-dashed border-slate-300 rounded-2xl p-7 flex flex-col opacity-80">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-400">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-1">Soon</span>
         </div>
-        <h4 class="text-lg font-bold text-slate-950 mb-2">Keyword &amp; SERP Intelligence</h4>
-        <p class="text-sm text-slate-600 leading-relaxed flex-1">
-          Cluster keywords by intent, map the SERP, spot content gaps versus competitors, and
-          turn it into a prioritised content calendar.
-        </p>
-        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-cyan-600 group-hover:gap-2.5 transition-all">
-          View solution →
-        </span>
-      </a>
-
-      <!-- Technical SEO Audit -->
-      <a href="/ai-solutions/technical-seo-audit.html"
-         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
-        <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <path d="M10.5 4.5a4 4 0 0 0 5 5l-2 2 3 3a2 2 0 0 1-3 3l-3-3-2 2a4 4 0 0 0-5-5l2-2-3-3a2 2 0 0 1 3-3l3 3z"/>
-          </svg>
-        </div>
-        <h4 class="text-lg font-bold text-slate-950 mb-2">Technical SEO Audit</h4>
-        <p class="text-sm text-slate-600 leading-relaxed flex-1">
-          Continuous crawl that finds broken links, Core Web Vitals issues, indexation and
-          schema problems — with fixes written for you.
-        </p>
-        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 group-hover:gap-2.5 transition-all">
-          View solution →
-        </span>
-      </a>
-
-      <!-- Link Building & Outreach Agent -->
-      <a href="/ai-solutions/link-outreach-agent.html"
-         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
-        <div class="w-12 h-12 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-600 mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <path d="M9 15l6-6"/><path d="M8 12l-2 2a3.5 3.5 0 0 0 5 5l2-2"/><path d="M16 12l2-2a3.5 3.5 0 0 0-5-5l-2 2"/>
-          </svg>
-        </div>
-        <h4 class="text-lg font-bold text-slate-950 mb-2">Link &amp; Outreach Agent</h4>
-        <p class="text-sm text-slate-600 leading-relaxed flex-1">
-          Finds relevant prospects, qualifies domains, personalises outreach at scale, and
-          runs the follow-up sequence — with a human approving every send.
-        </p>
-        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-violet-600 group-hover:gap-2.5 transition-all">
-          View solution →
-        </span>
-      </a>
-
-      <!-- Social Media Autopilot -->
-      <a href="/ai-solutions/social-media-autopilot.html"
-         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
-        <div class="w-12 h-12 rounded-xl bg-pink-50 border border-pink-100 flex items-center justify-center text-pink-600 mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <path d="M4 6h16M4 12h16M4 18h10"/><circle cx="18" cy="18" r="2"/>
-          </svg>
-        </div>
-        <h4 class="text-lg font-bold text-slate-950 mb-2">Social Media Autopilot</h4>
-        <p class="text-sm text-slate-600 leading-relaxed flex-1">
-          Repurposes one asset into a week of platform-native posts, schedules them, and drafts
-          replies — keeping every channel consistently on-brand.
-        </p>
-        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-pink-600 group-hover:gap-2.5 transition-all">
-          View solution →
-        </span>
-      </a>
-
-      <!-- Ad Copy Optimizer -->
-      <a href="/ai-solutions/ad-copy-optimizer.html"
-         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
-        <div class="w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-600 mb-5">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <path d="M3 11l17-7-4 17-4-6-5-1z"/><path d="M11 13l4-4"/>
-          </svg>
-        </div>
-        <h4 class="text-lg font-bold text-slate-950 mb-2">Ad Copy Optimizer</h4>
-        <p class="text-sm text-slate-600 leading-relaxed flex-1">
-          Generates on-policy ad variants, predicts angle strength, and turns A/B results into
-          the next round of copy — across Google and Meta.
-        </p>
-        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 group-hover:gap-2.5 transition-all">
-          View solution →
-        </span>
-      </a>
-
-    </div>
-
-    <!-- Bundle note -->
-    <div class="mt-10 bg-slate-950 text-white rounded-3xl p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
-      <div>
-        <div class="text-xs text-emerald-300 font-bold uppercase tracking-wider mb-2">The full bundle</div>
-        <h4 class="text-xl md:text-2xl font-bold">One connected growth loop</h4>
-        <p class="text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">
-          Run the six together and they compound: intelligence feeds the content engine,
-          content feeds social and outreach, the audit keeps the site healthy, and ad results
-          feed back into messaging. Each is independent — the bundle is where the leverage is.
+        <h4 class="text-lg font-bold text-slate-500 mb-2">E-commerce</h4>
+        <p class="text-sm text-slate-500 leading-relaxed flex-1">
+          Product content, merchandising, support automation and lifecycle messaging.
         </p>
       </div>
-      <a href="mailto:mkashifn@gmail.com?subject=SEO%20%26%20Marketing%20AI%20bundle"
-         class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">
-        Discuss a bundle →
-      </a>
-    </div>
 
+      <div class="border border-dashed border-slate-300 rounded-2xl p-7 flex flex-col opacity-80">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-400">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-1">Soon</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-500 mb-2">Legal &amp; Professional Services</h4>
+        <p class="text-sm text-slate-500 leading-relaxed flex-1">
+          Intake, document drafting, research assistants and client comms — with governance built in.
+        </p>
+      </div>
+
+    </div>
   </section>
 
-  <!-- ========================================================= -->
-  <!-- MORE INDUSTRIES (placeholder for future groups)          -->
-  <!-- ========================================================= -->
+  <!-- MORE INDUSTRIES -->
   <section class="max-w-7xl mx-auto px-6 pb-20">
     <div class="border border-dashed border-slate-300 rounded-2xl p-8 text-center">
-      <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">More industries</div>
-      <h3 class="text-lg font-bold text-slate-700">Healthcare, Legal, E-commerce, Real Estate &amp; more</h3>
+      <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Don't see yours?</div>
+      <h3 class="text-lg font-bold text-slate-700">New industry bundles ship here as they're built</h3>
       <p class="text-sm text-slate-500 mt-2 max-w-xl mx-auto">
-        New industry bundles are added here as they ship. Have a use case in mind?
-        <a href="mailto:mkashifn@gmail.com" class="text-emerald-600 font-bold hover:underline">Get in touch</a>.
+        Have a use case in mind?
+        <a href="mailto:mkashifn@gmail.com" class="text-emerald-600 font-bold hover:underline">Get in touch</a>
+        and we'll scope a bundle for your industry.
       </p>
     </div>
   </section>
 
-  <!-- ========================================================= -->
-  <!-- FOOTER                                                    -->
-  <!-- ========================================================= -->
+  <!-- FOOTER -->
   <footer class="border-t border-slate-200 bg-white/60">
     <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <div>
-        <span class="font-bold text-slate-700">Kashif Naveed</span> · AI Technologist · AI Governance &amp; Architecture
-      </div>
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · AI Technologist · AI Governance &amp; Architecture</div>
       <div class="flex items-center gap-5">
         <a href="/" class="hover:text-emerald-600 transition">Home</a>
         <a href="https://github.com/mkashifn" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-600 transition">GitHub</a>
