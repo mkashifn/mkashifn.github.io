@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal & Professional Services AI</title>
+  <meta name="description" content="AI solutions for legal & professional services — drafting, contract review, research, intake, eDiscovery and matter summaries, with governance and human sign-off." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(79,70,229,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .node { transition: all .2s ease; }
+    .node:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .code-window { background:#0b1220; border-radius:16px; overflow:hidden; border:1px solid #1e293b; }
+    .code-head { display:flex; align-items:center; gap:8px; padding:12px 16px; background:#0f172a; border-bottom:1px solid #1e293b; }
+    .code-dot { width:11px; height:11px; border-radius:50%; }
+    .code-file { color:#94a3b8; font-size:12px; margin-left:8px; font-family:ui-monospace,monospace; }
+    .code-lang { margin-left:auto; color:#475569; font-size:10px; font-weight:700; letter-spacing:.08em; }
+    .code-body { margin:0; padding:18px 20px; overflow-x:auto; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+      font-size:12.5px; line-height:1.7; color:#e2e8f0; }
+    .kw{color:#c084fc} .st{color:#86efac} .cm{color:#64748b;font-style:italic} .fn{color:#7dd3fc} .nm{color:#fca5a5} .ty{color:#fcd34d}
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-4">
+      <a href="/ai-solutions/" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-indigo-600 transition shrink-0">← AI Solutions</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-sm font-bold text-slate-400">Legal &amp; Professional Services</span>
+      <div class="ml-auto hidden sm:flex items-center gap-3">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-9 h-9 rounded-full object-cover ring-2 ring-indigo-100" />
+        <span class="font-bold text-slate-900 text-sm">Kashif Naveed</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-14 md:py-20 text-center fade-in">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold mb-5">
+        <span class="w-2 h-2 bg-indigo-500 rounded-full"></span>
+        Industry 03 · Legal &amp; Professional Services
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl mx-auto">Draft, review and research faster — <span class="text-indigo-600">with a human accountable</span>.</h1>
+      <p class="mt-5 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">Every solution is assistive and cite-grounded, with a qualified person signing off. Six independent tools — deploy one, or bundle them across the matter lifecycle.</p>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+      <div>
+        <div class="text-[11px] font-bold text-indigo-600 uppercase tracking-wider mb-2">The bundle</div>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-950">6 solutions</h2>
+        <p class="text-sm text-slate-500 mt-2 max-w-2xl">Each is fully independent with its own page. Start where it hurts most and add the rest over time.</p>
+      </div>
+      <span class="inline-flex items-center gap-2 self-start md:self-auto px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-600">6 solutions</span>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <a href="/ai-solutions/legal/document-drafting.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 13h7M9 17h5"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Document Drafting Assistant</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">First drafts of contracts, letters and filings from your own templates and matter data — a lawyer reviews and signs off.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-indigo-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/legal/contract-review.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Contract Review & Risk</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Extract key clauses, compare against your playbook, and surface risks with suggested redlines — for a lawyer to decide.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/legal/legal-research.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Legal Research Assistant</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Answers grounded in your firm's knowledge and permitted sources — with a citation on every statement, or it won't answer.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-violet-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/legal/client-intake.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M9 11h6M9 15h4"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Client Intake & Triage</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Structured intake, conflict pre-checks and routing to the right practice — with a human confirming every decision.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-cyan-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/legal/ediscovery-review.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-orange-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">eDiscovery & Doc Review</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Prioritise and classify large document sets for relevance and privilege — with human QC on every category.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/legal/matter-summary.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-pink-50 border border-pink-100 flex items-center justify-center text-pink-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h12M4 18h8"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Matter & Deposition Summaries</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Chronologies, key-fact lists and summaries from case files and transcripts — every fact linked to its source.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-pink-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+    </div>
+
+    <div class="mt-10 bg-slate-950 text-white rounded-3xl p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+      <div>
+        <div class="text-xs text-indigo-300 font-bold uppercase tracking-wider mb-2">The full bundle</div>
+        <h3 class="text-xl md:text-2xl font-bold">The matter lifecycle, accelerated</h3>
+        <p class="text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">Intake structures the matter, research grounds it in precedent, drafting and review produce and pressure-test documents, eDiscovery works the record, and summaries make it all legible — every step assistive, cited, and human-approved. Each is independent; the bundle covers the lifecycle.</p>
+      </div>
+      <a href="mailto:mkashifn@gmail.com?subject=Legal%20AI%20bundle" class="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-white rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Discuss a bundle →</a>
+    </div>
+
+  </section>
+
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · AI Solutions · Legal &amp; Professional Services</div>
+      <div class="flex items-center gap-5">
+        <a href="/ai-solutions/" class="hover:text-indigo-600 transition">All industries</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-emerald-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

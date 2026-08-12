@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Search & Merchandising</title>
+  <meta name="description" content="AI Smart Search & Merchandising — semantic search and recommendations that understand intent, not just keywords." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(124,58,237,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .node { transition: all .2s ease; }
+    .node:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .code-window { background:#0b1220; border-radius:16px; overflow:hidden; border:1px solid #1e293b; }
+    .code-head { display:flex; align-items:center; gap:8px; padding:12px 16px; background:#0f172a; border-bottom:1px solid #1e293b; }
+    .code-dot { width:11px; height:11px; border-radius:50%; }
+    .code-file { color:#94a3b8; font-size:12px; margin-left:8px; font-family:ui-monospace,monospace; }
+    .code-lang { margin-left:auto; color:#475569; font-size:10px; font-weight:700; letter-spacing:.08em; }
+    .code-body { margin:0; padding:18px 20px; overflow-x:auto; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+      font-size:12.5px; line-height:1.7; color:#e2e8f0; }
+    .kw{color:#c084fc} .st{color:#86efac} .cm{color:#64748b;font-style:italic} .fn{color:#7dd3fc} .nm{color:#fca5a5} .ty{color:#fcd34d}
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-4">
+      <a href="/ai-solutions/" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-violet-600 transition shrink-0">AI Solutions</a>
+      <span class="text-slate-300">/</span>
+      <a href="/ai-solutions/ecommerce/" class="text-sm font-bold text-slate-500 hover:text-slate-800 transition">E-commerce</a>
+      <div class="ml-auto hidden sm:flex items-center gap-3">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-9 h-9 rounded-full object-cover ring-2 ring-violet-100" />
+        <span class="font-bold text-slate-900 text-sm">Kashif Naveed</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 md:py-16 fade-in">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-xs font-bold">Discovery</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">Independent solution</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl">Smart Search & Merchandising</h1>
+      <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">Replace brittle keyword search with semantic understanding: natural-language queries, typo tolerance, synonym awareness and intent-aware recommendations that put the right products in front of every shopper.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#how" class="inline-flex items-center gap-2 bg-slate-900 text-white rounded-xl px-5 py-3 font-bold text-sm shadow-soft hover:bg-slate-800 transition">How it works</a>
+        <a href="mailto:mkashifn@gmail.com?subject=Smart%20Search%20%26%20Merchandising" class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-5 py-3 font-bold text-sm text-slate-700 hover:border-violet-300 transition">Request a demo</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-6 py-14 space-y-14">
+
+    <section class="grid md:grid-cols-[1fr_300px] gap-8">
+      <div>
+        <div class="text-xs font-bold text-violet-600 uppercase tracking-wider mb-3">The problem</div>
+        <h2 class="text-2xl font-bold text-slate-950">Keyword search fails exactly when shoppers are ready to buy</h2>
+        <p class="mt-3 text-slate-600 leading-7">Traditional search matches strings, not meaning: a typo, a synonym, or a natural-language query returns nothing, and the shopper leaves. Generic recommendations don't help them discover the rest of the catalog.</p>
+        <p class="mt-3 text-slate-600 leading-7">This solution understands intent, tolerates messy queries, and recommends by context — turning search from a dead end into a conversion engine.</p>
+      </div>
+      <div class="bg-slate-950 text-white rounded-2xl p-6 self-start">
+        <div class="text-xs text-slate-400 mb-2">Primary objective</div>
+        <div class="font-semibold leading-6">Help shoppers find what they mean — and discover more — lifting conversion and average order value.</div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="text-xs font-bold text-violet-600 uppercase tracking-wider mb-3">How it works</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-6">Query → understand intent → rank → recommend</h2>
+      <div class="bg-white border border-slate-200 rounded-3xl shadow-soft overflow-hidden">
+        <div class="grid-bg p-8 overflow-x-auto">
+          <div class="min-w-[820px] grid grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-3 items-stretch">
+            <div class="node bg-white border border-slate-200 rounded-2xl p-5">
+              <div class="w-11 h-11 rounded-xl bg-slate-50 text-slate-600 flex items-center justify-center mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></div>
+              <div class="font-bold">Query</div>
+              <div class="text-xs text-slate-500 mt-1">Natural language, typos, synonyms</div>
+            </div>
+            <div class="flex items-center justify-center text-slate-300 font-bold">→</div>
+            <div class="node bg-white border-2 border-violet-200 rounded-2xl p-5">
+              <div class="w-11 h-11 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div class="font-bold">Understand</div>
+              <div class="text-xs text-slate-500 mt-1">Embed intent & attributes</div>
+            </div>
+            <div class="flex items-center justify-center text-slate-300 font-bold">→</div>
+            <div class="node bg-white border border-slate-200 rounded-2xl p-5">
+              <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h12M4 18h8"/></svg></div>
+              <div class="font-bold">Rank</div>
+              <div class="text-xs text-slate-500 mt-1">Relevance + business rules</div>
+            </div>
+            <div class="flex items-center justify-center text-slate-300 font-bold">→</div>
+            <div class="node bg-white border border-slate-200 rounded-2xl p-5">
+              <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+              <div class="font-bold">Recommend</div>
+              <div class="text-xs text-slate-500 mt-1">Complementary & similar items</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-violet-600 uppercase tracking-wider">What it does</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ Semantic / vector search</li>
+          <li>✓ Typo & synonym tolerance</li>
+          <li>✓ Natural-language queries</li>
+          <li>✓ Similar & complementary recs</li>
+          <li>✓ Merchandising rule overrides</li>
+          <li>✓ Zero-result rescue</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-violet-600 uppercase tracking-wider">Built with</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ Embeddings + vector store</li>
+          <li>✓ Claude for query understanding</li>
+          <li>✓ Catalog & inventory sync</li>
+          <li>✓ Ranking with business rules</li>
+          <li>✓ Storefront search API</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-violet-600 uppercase tracking-wider">Levers you keep</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ Boost / bury controls</li>
+          <li>✓ Promoted collections</li>
+          <li>✓ Margin-aware ranking</li>
+          <li>✓ Out-of-stock handling</li>
+          <li>✓ A/B tunable relevance</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="text-xs font-bold text-violet-600 uppercase tracking-wider mb-3">Under the hood</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-2">Intent-aware semantic retrieval</h2>
+      <p class="text-slate-600 mb-5 max-w-2xl">Queries and products live in the same vector space, so 'warm jacket for hiking' matches the right items even with no keyword overlap — then business rules re-rank.</p>
+      <div class="code-window">
+        <div class="code-head">
+          <span class="code-dot" style="background:#ff5f57"></span>
+          <span class="code-dot" style="background:#febc2e"></span>
+          <span class="code-dot" style="background:#28c840"></span>
+          <span class="code-file">search/query.py</span>
+          <span class="code-lang">PYTHON</span>
+        </div>
+<pre class="code-body"><span class="kw">from</span> embed <span class="kw">import</span> embed_one
+<span class="kw">from</span> store <span class="kw">import</span> vector_search, apply_rules
+
+<span class="kw">def</span> <span class="fn">search</span>(q: <span class="ty">str</span>, ctx: <span class="ty">dict</span>, k: <span class="ty">int</span> = <span class="nm">48</span>):
+    vec = <span class="fn">embed_one</span>(q)                    <span class="cm"># same space as products</span>
+    hits = <span class="fn">vector_search</span>(vec, k=k*<span class="nm">2</span>)     <span class="cm"># semantic recall</span>
+    <span class="cm"># Re-rank by margin, stock and merchandising rules</span>
+    <span class="kw">return</span> <span class="fn">apply_rules</span>(hits, ctx)[:k]</pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="text-xs font-bold text-violet-600 uppercase tracking-wider mb-3">Outcomes</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">Higher</div><div class="text-sm text-slate-500 mt-1">Search conversion</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">Fewer</div><div class="text-sm text-slate-500 mt-1">Zero-result queries</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">+AOV</div><div class="text-sm text-slate-500 mt-1">From recommendations</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">Instant</div><div class="text-sm text-slate-500 mt-1">Sub-100ms lookups</div></div>
+      </div>
+    </section>
+
+    <section class="bg-slate-950 text-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold">Turn search into your best salesperson</h3>
+        <p class="text-sm text-slate-300 mt-2">Works well with Catalog Enrichment — clean attributes make search sharper.</p>
+      </div>
+      <a href="mailto:mkashifn@gmail.com?subject=Smart%20Search%20%26%20Merchandising" class="inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-white rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Start a conversation →</a>
+    </section>
+
+    <section>
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More E-commerce solutions</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/ai-solutions/ecommerce/lifecycle-messaging.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Lifecycle Messaging</span><span class="text-pink-600">→</span></a>
+        <a href="/ai-solutions/ecommerce/catalog-enrichment.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Catalog Enrichment</span><span class="text-orange-600">→</span></a>
+        <a href="/ai-solutions/ecommerce/product-content-generator.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Product Content Generator</span><span class="text-emerald-600">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · AI Solutions · E-commerce</div>
+      <div class="flex items-center gap-5">
+        <a href="/ai-solutions/ecommerce/" class="hover:text-violet-600 transition">All solutions</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-violet-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
