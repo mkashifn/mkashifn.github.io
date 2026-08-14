@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boardroom Briefing</title>
+  <meta name="description" content="A 90-minute board briefing that puts AI oversight on the risk/audit committee agenda — ISO/IEC 42001 at board altitude. By Kashif Naveed." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(217,119,6,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .node { transition: all .2s ease; }
+    .node:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- HEADER -->
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-4">
+      <a href="/ai-courses/" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-amber-600 transition shrink-0">AI Courses</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-sm font-bold text-slate-500">Boardroom Briefing</span>
+      <div class="ml-auto hidden sm:flex items-center gap-3">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-9 h-9 rounded-full object-cover ring-2 ring-amber-100" />
+        <span class="font-bold text-slate-900 text-sm">Kashif Naveed</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 md:py-16 fade-in">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold">90 minutes</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">Full board</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">On-site or virtual</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl">
+        Boardroom Briefing
+      </h1>
+      <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">
+        A single, high-impact session that puts AI oversight on the board's agenda with the right framing.
+        In 90 minutes your directors understand why AI now sits inside their duty of care, what ISO/IEC
+        42001 asks of the organisation, and the five questions to put to management at the very next meeting.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#agenda" class="inline-flex items-center gap-2 bg-slate-900 text-white rounded-xl px-5 py-3 font-bold text-sm shadow-soft hover:bg-slate-800 transition">See the agenda</a>
+        <a href="mailto:mkashifn@gmail.com?subject=Boardroom%20Briefing%20—%20enquiry" class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-5 py-3 font-bold text-sm text-slate-700 hover:border-amber-300 transition">Enquire</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-6 py-14 space-y-14">
+
+    <!-- PROBLEM / OBJECTIVE -->
+    <section class="grid md:grid-cols-[1fr_300px] gap-8">
+      <div>
+        <div class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-3">The problem</div>
+        <h2 class="text-2xl font-bold text-slate-950">AI adoption is outrunning AI oversight — and the board owns the gap</h2>
+        <p class="mt-3 text-slate-600 leading-7">
+          AI now sits inside decisions that used to be human — who gets credit, who gets shortlisted, what
+          a customer is told. When those decisions go wrong, they go wrong at machine speed and scale. The
+          director's duty of care does not switch off because an algorithm was involved, yet most boards
+          cannot name every AI system operating inside their organisation.
+        </p>
+        <p class="mt-3 text-slate-600 leading-7">
+          The briefing closes that awareness gap fast, so the board can direct management with authority
+          rather than delegate a risk it hasn't sized.
+        </p>
+      </div>
+      <div class="bg-slate-950 text-white rounded-2xl p-6 self-start">
+        <div class="text-xs text-slate-400 mb-2">Objective</div>
+        <div class="font-semibold leading-6">
+          Get AI oversight onto the risk/audit committee agenda — correctly framed, and owned.
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section id="agenda">
+      <div class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-3">In the room</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-6">A focused 90-minute agenda</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-amber-600 text-white font-bold flex items-center justify-center mb-3">1</div>
+          <div class="font-bold text-slate-900">Why AI is a board issue</div>
+          <p class="text-sm text-slate-600 mt-1">The governance gap, director exposure, and the three failure modes boards get caught by.</p>
+          <div class="text-xs text-slate-400 mt-3">~30 min</div>
+        </div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-amber-600 text-white font-bold flex items-center justify-center mb-3">2</div>
+          <div class="font-bold text-slate-900">What ISO/IEC 42001 is</div>
+          <p class="text-sm text-slate-600 mt-1">The standard in board language, and the artefacts the board should insist on seeing.</p>
+          <div class="text-xs text-slate-400 mt-3">~35 min</div>
+        </div>
+        <div class="node bg-white border-2 border-amber-200 rounded-2xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-amber-600 text-white font-bold flex items-center justify-center mb-3">3</div>
+          <div class="font-bold text-slate-900">The five questions</div>
+          <p class="text-sm text-slate-600 mt-1">The five questions to put to management at the next meeting — with the red flags to watch for.</p>
+          <div class="text-xs text-slate-400 mt-3">~25 min incl. discussion</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-COL -->
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-amber-600 uppercase tracking-wider">What it covers</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ The adoption-vs-oversight gap</li>
+          <li>✓ Duty of care applied to AI</li>
+          <li>✓ ISO/IEC 42001 in board terms</li>
+          <li>✓ The must-see governance artefacts</li>
+          <li>✓ The five-minute question set</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-amber-600 uppercase tracking-wider">Who should attend</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ The full board</li>
+          <li>✓ Company secretary</li>
+          <li>✓ Risk / audit committee members</li>
+          <li>✓ CEO &amp; CRO (optional)</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-amber-600 uppercase tracking-wider">What you take away</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ The five-question starter set</li>
+          <li>✓ A one-page AIMS board map</li>
+          <li>✓ Shared language for the next agenda</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section>
+      <div class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-3">Outcomes</div>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">90</div><div class="text-sm text-slate-500 mt-1">Minutes to a shared picture</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">5</div><div class="text-sm text-slate-500 mt-1">Questions for the next meeting</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">1</div><div class="text-sm text-slate-500 mt-1">Agenda item, correctly owned</div></div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT -->
+    <section class="bg-white border border-slate-200 rounded-3xl p-8 shadow-soft">
+      <div class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-2">Investment</div>
+      <div class="flex flex-col md:flex-row md:items-end gap-4">
+        <div>
+          <div class="text-3xl font-bold text-slate-950">$5,000 – $9,000 <span class="text-lg font-semibold text-slate-500">AUD</span></div>
+          <p class="text-sm text-slate-600 mt-2 max-w-xl">Fixed fee per session for a single board. Scoped by travel, on-site vs virtual, and any tailoring to your sector and AI footprint.</p>
+        </div>
+        <a href="mailto:mkashifn@gmail.com?subject=Boardroom%20Briefing%20—%20enquiry" class="md:ml-auto inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Request a quote →</a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-slate-950 text-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold">Ready to put AI on the next board agenda?</h3>
+        <p class="text-sm text-slate-300 mt-2">Tell me your organisation, sector, and where AI sits on your risk register today.</p>
+      </div>
+      <a href="mailto:mkashifn@gmail.com?subject=Boardroom%20Briefing%20—%20enquiry" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Start a conversation →</a>
+    </section>
+
+    <!-- RELATED -->
+    <section>
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Go deeper</div>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/ai-courses/director-masterclass.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Director Masterclass</span><span class="text-cyan-600">→</span></a>
+        <a href="/ai-courses/board-elt-intensive.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Board + ELT Intensive</span><span class="text-emerald-600">→</span></a>
+        <a href="/ai-courses/directors-ai-question-bank.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">The Question Bank</span><span class="text-indigo-600">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · AI Courses · Boardroom Briefing</div>
+      <div class="flex items-center gap-5">
+        <a href="/ai-courses/" class="hover:text-amber-600 transition">All offerings</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-amber-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

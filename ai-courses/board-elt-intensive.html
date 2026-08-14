@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Board + ELT Intensive</title>
+  <meta name="description" content="A full-day ISO/IEC 42001 intensive that aligns board oversight with the executive response — live dashboard co-design, a two-round tabletop, and a working session that ships a 90-day plan." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(16,185,129,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .node { transition: all .2s ease; }
+    .node:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- HEADER -->
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-4">
+      <a href="/ai-courses/" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-emerald-600 transition shrink-0">AI Courses</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-sm font-bold text-slate-500">Board + ELT Intensive</span>
+      <div class="ml-auto hidden sm:flex items-center gap-3">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-9 h-9 rounded-full object-cover ring-2 ring-emerald-100" />
+        <span class="font-bold text-slate-900 text-sm">Kashif Naveed</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 md:py-16 fade-in">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">Full day</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">Board + executive leadership team</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">Produces real artefacts</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl">
+        Board + ELT Intensive
+      </h1>
+      <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">
+        Oversight and execution in the same room. The full masterclass, extended with a live dashboard
+        co-design, a two-round incident tabletop with a management-response round, and a closing working
+        session that produces a draft AI risk appetite statement and a 90-day action plan — each item
+        owned by a named person before anyone leaves.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#day" class="inline-flex items-center gap-2 bg-slate-900 text-white rounded-xl px-5 py-3 font-bold text-sm shadow-soft hover:bg-slate-800 transition">See the day</a>
+        <a href="mailto:mkashifn@gmail.com?subject=Board%20%2B%20ELT%20Intensive%20—%20enquiry" class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-5 py-3 font-bold text-sm text-slate-700 hover:border-emerald-300 transition">Enquire</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-6 py-14 space-y-14">
+
+    <!-- PROBLEM / OBJECTIVE -->
+    <section class="grid md:grid-cols-[1fr_300px] gap-8">
+      <div>
+        <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-3">Why the intensive</div>
+        <h2 class="text-2xl font-bold text-slate-950">Oversight fails at the handoff to management</h2>
+        <p class="mt-3 text-slate-600 leading-7">
+          A board can set the right expectations and still watch them dissolve in translation to the
+          executive team. The intensive closes that gap by putting the board and the ELT in one room:
+          the board learns to oversee, the executives see exactly what they'll be asked for, and together
+          they build the artefacts and cadence that connect the two — so the instructions the board issues
+          are actually operable.
+        </p>
+        <p class="mt-3 text-slate-600 leading-7">
+          It is the fastest route from "we should govern AI" to "here is our governance, owned and dated."
+        </p>
+      </div>
+      <div class="bg-slate-950 text-white rounded-2xl p-6 self-start">
+        <div class="text-xs text-slate-400 mb-2">Objective</div>
+        <div class="font-semibold leading-6">
+          Align board oversight with the management response — and leave with a live 90-day plan.
+        </div>
+      </div>
+    </section>
+
+    <!-- THE DAY -->
+    <section id="day">
+      <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-3">The day</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-6">Morning learns it; afternoon builds it</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Morning</div>
+          <div class="font-bold text-slate-900 mt-1">The full seven-module masterclass</div>
+          <p class="text-sm text-slate-600 mt-1">The complete program at oversight altitude — from the governance gap to the four artefacts to the oversight operating model — with board and executives building shared language.</p>
+        </div>
+        <div class="node bg-white border-2 border-emerald-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Afternoon · 1</div>
+          <div class="font-bold text-slate-900 mt-1">Live dashboard co-design</div>
+          <p class="text-sm text-slate-600 mt-1">Board and ELT design the AI governance dashboard and reporting cadence together — producing a first-draft dashboard the organisation can actually adopt.</p>
+        </div>
+        <div class="node bg-white border-2 border-emerald-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Afternoon · 2</div>
+          <div class="font-bold text-slate-900 mt-1">Two-round incident tabletop</div>
+          <p class="text-sm text-slate-600 mt-1">The board makes its oversight decisions; then the executive team responds and reports back — exposing the real handoff between oversight and operation.</p>
+        </div>
+        <div class="node bg-white border-2 border-emerald-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Afternoon · 3</div>
+          <div class="font-bold text-slate-900 mt-1">Working session — appetite &amp; 90-day plan</div>
+          <p class="text-sm text-slate-600 mt-1">Translate the day into a draft AI risk appetite statement and a 90-day action plan, each item with a named owner and a date.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-COL -->
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider">You'll leave with</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ A first-draft AI governance dashboard</li>
+          <li>✓ A draft AI risk appetite statement</li>
+          <li>✓ A 90-day plan with named owners</li>
+          <li>✓ A shared board–ELT operating model</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Who should attend</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ The full board</li>
+          <li>✓ CEO and executive leadership team</li>
+          <li>✓ CRO, CISO, and data/AI leads</li>
+          <li>✓ Company secretary</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Best for</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ Organisations where AI is strategic</li>
+          <li>✓ Regulated entities (e.g. APRA)</li>
+          <li>✓ Boards heading toward certification</li>
+          <li>✓ Teams that need to move, not just learn</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section>
+      <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-3">Outcomes</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">3</div><div class="text-sm text-slate-500 mt-1">Artefacts shipped in the room</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">2</div><div class="text-sm text-slate-500 mt-1">Tabletop rounds</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">90</div><div class="text-sm text-slate-500 mt-1">Day plan, owned &amp; dated</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">1</div><div class="text-sm text-slate-500 mt-1">Aligned board + ELT</div></div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT -->
+    <section class="bg-white border border-slate-200 rounded-3xl p-8 shadow-soft">
+      <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2">Investment</div>
+      <div class="flex flex-col md:flex-row md:items-end gap-4">
+        <div>
+          <div class="text-3xl font-bold text-slate-950">$28,000 – $45,000 <span class="text-lg font-semibold text-slate-500">AUD</span></div>
+          <p class="text-sm text-slate-600 mt-2 max-w-xl">Fixed fee for the full-day session, board + ELT. Includes takeaway assets and the facilitated production of your dashboard draft, appetite statement, and 90-day plan.</p>
+        </div>
+        <a href="mailto:mkashifn@gmail.com?subject=Board%20%2B%20ELT%20Intensive%20—%20enquiry" class="md:ml-auto inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Request a quote →</a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-slate-950 text-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold">Turn a day into a governance operating model</h3>
+        <p class="text-sm text-slate-300 mt-2">Get the board and the executive team on the same page — with artefacts to prove it.</p>
+      </div>
+      <a href="mailto:mkashifn@gmail.com?subject=Board%20%2B%20ELT%20Intensive%20—%20enquiry" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Start a conversation →</a>
+    </section>
+
+    <!-- RELATED -->
+    <section>
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Compare offerings</div>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/ai-courses/director-masterclass.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Director Masterclass</span><span class="text-cyan-600">→</span></a>
+        <a href="/ai-courses/boardroom-briefing.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Boardroom Briefing</span><span class="text-amber-600">→</span></a>
+        <a href="/ai-courses/directors-ai-question-bank.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">The Question Bank</span><span class="text-indigo-600">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · AI Courses · Board + ELT Intensive</div>
+      <div class="flex items-center gap-5">
+        <a href="/ai-courses/" class="hover:text-emerald-600 transition">All offerings</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-emerald-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

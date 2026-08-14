@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Director Masterclass</title>
+  <meta name="description" content="The core half-day board program on ISO/IEC 42001 — all seven modules including a boardroom incident tabletop. Directors leave with a working oversight operating model." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(6,182,212,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(217,119,6,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .node { transition: all .2s ease; }
+    .node:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- HEADER -->
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-4">
+      <a href="/ai-courses/" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-cyan-600 transition shrink-0">AI Courses</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-sm font-bold text-slate-500">Director Masterclass</span>
+      <div class="ml-auto hidden sm:flex items-center gap-3">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-9 h-9 rounded-full object-cover ring-2 ring-cyan-100" />
+        <span class="font-bold text-slate-900 text-sm">Kashif Naveed</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 md:py-16 fade-in">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-bold">Half day · ~3.5 hours</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">Single board + company secretary</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">The core program</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl">
+        Director Masterclass
+      </h1>
+      <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">
+        The full seven-module program, delivered to a single board in a half day — culminating in a
+        facilitated boardroom incident tabletop. Directors don't just learn what to demand; they rehearse
+        it, and leave with a working oversight operating model they can put in place at the next meeting.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#modules" class="inline-flex items-center gap-2 bg-slate-900 text-white rounded-xl px-5 py-3 font-bold text-sm shadow-soft hover:bg-slate-800 transition">See the modules</a>
+        <a href="mailto:mkashifn@gmail.com?subject=Director%20Masterclass%20—%20enquiry" class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-5 py-3 font-bold text-sm text-slate-700 hover:border-cyan-300 transition">Enquire</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-6 py-14 space-y-14">
+
+    <!-- PROBLEM / OBJECTIVE -->
+    <section class="grid md:grid-cols-[1fr_300px] gap-8">
+      <div>
+        <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-3">Why a masterclass</div>
+        <h2 class="text-2xl font-bold text-slate-950">Awareness isn't oversight — a board needs an operating model</h2>
+        <p class="mt-3 text-slate-600 leading-7">
+          Knowing AI is a risk is not the same as governing it. A board that oversees AI well does specific
+          things on a cadence: it demands the right artefacts, asks precise questions, houses the topic in
+          the right committee, and receives the right dashboard. The masterclass builds that whole model —
+          and pressure-tests it with a live incident so the gaps surface in a safe room, not a real crisis.
+        </p>
+        <p class="mt-3 text-slate-600 leading-7">
+          It is pitched at oversight altitude throughout: directors govern the system, they don't implement it.
+        </p>
+      </div>
+      <div class="bg-slate-950 text-white rounded-2xl p-6 self-start">
+        <div class="text-xs text-slate-400 mb-2">Objective</div>
+        <div class="font-semibold leading-6">
+          Leave with a working AI oversight operating model — and having rehearsed it under fire.
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section id="modules">
+      <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-3">The programme</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-6">Seven modules, one arc</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6"><div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-cyan-600 text-white font-bold flex items-center justify-center">1</div><div class="font-bold text-slate-900">Why AI is a board agenda item</div></div><p class="text-sm text-slate-600 mt-1">The governance gap, director exposure, the three failure modes.</p></div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6"><div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-cyan-600 text-white font-bold flex items-center justify-center">2</div><div class="font-bold text-slate-900">What ISO/IEC 42001 is</div></div><p class="text-sm text-slate-600 mt-1">Clauses 4–10 as a PDCA loop; Annex A; the Statement of Applicability.</p></div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6"><div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-cyan-600 text-white font-bold flex items-center justify-center">3</div><div class="font-bold text-slate-900">The regulatory convergence</div></div><p class="text-sm text-slate-600 mt-1">EU AI Act, NIST AI RMF, APRA CPS 230/234, and the liability trajectory.</p></div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6"><div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-cyan-600 text-white font-bold flex items-center justify-center">4</div><div class="font-bold text-slate-900">The four artefacts</div></div><p class="text-sm text-slate-600 mt-1">Policy, risk appetite, impact assessment, Statement of Applicability.</p></div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6"><div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-cyan-600 text-white font-bold flex items-center justify-center">5</div><div class="font-bold text-slate-900">The oversight toolkit</div></div><p class="text-sm text-slate-600 mt-1">The question bank, the dashboard, committee design, reporting cadence.</p></div>
+        <div class="node bg-white border border-slate-200 rounded-2xl p-6"><div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-cyan-600 text-white font-bold flex items-center justify-center">6</div><div class="font-bold text-slate-900">The road to assurance</div></div><p class="text-sm text-slate-600 mt-1">Assurance layers and the certification journey — what it proves, and doesn't.</p></div>
+        <div class="node bg-slate-950 text-white rounded-2xl p-6 md:col-span-2"><div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-white text-slate-900 font-bold flex items-center justify-center">7</div><div class="font-bold">Boardroom tabletop — an AI incident</div></div><p class="text-sm text-slate-300 mt-1">A facilitated simulation: a deployed AI system causes a harm and a regulatory event. Directors rehearse the decisions, disclosure and after-action response — debriefed against clauses 9 and 10.</p></div>
+      </div>
+    </section>
+
+    <!-- 3-COL -->
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider">You'll be able to</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ Read a 42001 posture and challenge gaps</li>
+          <li>✓ Set and monitor an AI risk appetite</li>
+          <li>✓ Ask precise, standard-grounded questions</li>
+          <li>✓ Design the board's AI dashboard &amp; cadence</li>
+          <li>✓ Judge whether an assurance path is credible</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider">Who should attend</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ The full board</li>
+          <li>✓ Company secretary</li>
+          <li>✓ Chairs of risk &amp; audit committees</li>
+          <li>✓ CEO / CRO (recommended)</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider">Takeaway pack</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ The Director's AI Question Bank</li>
+          <li>✓ AI risk appetite template</li>
+          <li>✓ The six-tile dashboard spec</li>
+          <li>✓ 90-day board action checklist</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section>
+      <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-3">Outcomes</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">7</div><div class="text-sm text-slate-500 mt-1">Modules, incl. the tabletop</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">4</div><div class="text-sm text-slate-500 mt-1">Takeaway assets</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">1</div><div class="text-sm text-slate-500 mt-1">Rehearsed AI incident</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">½</div><div class="text-sm text-slate-500 mt-1">A day to full oversight literacy</div></div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT -->
+    <section class="bg-white border border-slate-200 rounded-3xl p-8 shadow-soft">
+      <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-2">Investment</div>
+      <div class="flex flex-col md:flex-row md:items-end gap-4">
+        <div>
+          <div class="text-3xl font-bold text-slate-950">$14,000 – $22,000 <span class="text-lg font-semibold text-slate-500">AUD</span></div>
+          <p class="text-sm text-slate-600 mt-2 max-w-xl">Fixed fee per single board. Includes the takeaway pack for every director. Scoped by travel and any sector-specific tailoring of the tabletop.</p>
+        </div>
+        <a href="mailto:mkashifn@gmail.com?subject=Director%20Masterclass%20—%20enquiry" class="md:ml-auto inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Request a quote →</a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-slate-950 text-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold">Build your board's oversight operating model</h3>
+        <p class="text-sm text-slate-300 mt-2">Half a day; a lasting capability. Tell me about your board and your AI footprint.</p>
+      </div>
+      <a href="mailto:mkashifn@gmail.com?subject=Director%20Masterclass%20—%20enquiry" class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Start a conversation →</a>
+    </section>
+
+    <!-- RELATED -->
+    <section>
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Compare offerings</div>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/ai-courses/boardroom-briefing.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Boardroom Briefing</span><span class="text-amber-600">→</span></a>
+        <a href="/ai-courses/board-elt-intensive.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Board + ELT Intensive</span><span class="text-emerald-600">→</span></a>
+        <a href="/ai-courses/certificate-cohort.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Certificate Cohort</span><span class="text-rose-600">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · AI Courses · Director Masterclass</div>
+      <div class="flex items-center gap-5">
+        <a href="/ai-courses/" class="hover:text-cyan-600 transition">All offerings</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-cyan-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
