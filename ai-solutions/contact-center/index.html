@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Center AI</title>
+  <meta name="description" content="AI solutions for Contact Centers on Amazon Connect — contact flows & routing, conversational voice AI, QA & compliance analytics, enterprise integrations, migration and managed operations." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(245,158,11,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .node { transition: all .2s ease; }
+    .node:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .code-window { background:#0b1220; border-radius:16px; overflow:hidden; border:1px solid #1e293b; }
+    .code-head { display:flex; align-items:center; gap:8px; padding:12px 16px; background:#0f172a; border-bottom:1px solid #1e293b; }
+    .code-dot { width:11px; height:11px; border-radius:50%; }
+    .code-file { color:#94a3b8; font-size:12px; margin-left:8px; font-family:ui-monospace,monospace; }
+    .code-lang { margin-left:auto; color:#475569; font-size:10px; font-weight:700; letter-spacing:.08em; }
+    .code-body { margin:0; padding:18px 20px; overflow-x:auto; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+      font-size:12.5px; line-height:1.7; color:#e2e8f0; }
+    .kw{color:#c084fc} .st{color:#86efac} .cm{color:#64748b;font-style:italic} .fn{color:#7dd3fc} .nm{color:#fca5a5} .ty{color:#fcd34d}
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-4">
+      <a href="/ai-solutions/" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-amber-600 transition shrink-0">← AI Solutions</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-sm font-bold text-slate-400">Contact Center</span>
+      <div class="ml-auto hidden sm:flex items-center gap-3">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-9 h-9 rounded-full object-cover ring-2 ring-amber-100" />
+        <span class="font-bold text-slate-900 text-sm">Kashif Naveed</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-14 md:py-20 text-center fade-in">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-100 text-amber-700 text-xs font-bold mb-5">
+        <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+        Industry 04 · Contact Center
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl mx-auto">Amazon Connect, built and run by <span class="text-amber-600">people who've done the migration</span>.</h1>
+      <p class="mt-5 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">Contact flows, conversational voice AI, QA analytics, enterprise integrations, migration and managed operations. Six independent solutions — deploy one, or bundle them into an end-to-end Amazon Connect programme.</p>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+      <div>
+        <div class="text-[11px] font-bold text-amber-600 uppercase tracking-wider mb-2">The bundle</div>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-950">6 solutions</h2>
+        <p class="text-sm text-slate-500 mt-2 max-w-2xl">Each is fully independent with its own page. Start where it hurts most and add the rest over time.</p>
+      </div>
+      <span class="inline-flex items-center gap-2 self-start md:self-auto px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-600">6 solutions</span>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <a href="/ai-solutions/contact-center/contact-flow-routing.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Contact Flow &amp; Routing Designer</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">IVR, contact flows and routing profiles designed and versioned as code — modelled with stakeholders, shipped without regressions.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-amber-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/contact-center/conversational-voice-ai.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center text-purple-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Conversational Voice AI</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Lex, Transcribe, Polly and Translate combined into multilingual voicebots — real-time voice-to-voice translation for global customers.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-purple-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/contact-center/contact-lens-qa-analytics.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Contact Lens QA &amp; Compliance</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Every call scored for sentiment, script adherence and compliance risk — coaching signal for agents, evidence for auditors.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-teal-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/contact-center/enterprise-integration-hub.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07L11.5 4.5"/><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07L12.5 19.5"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Enterprise Integration Hub</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Lambda, API Gateway, DynamoDB and EventBridge wired to CRM and ServiceNow — screen-pops, case sync and events, not swivel-chair.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/contact-center/cloud-migration-modernization.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 16l-4-4-4 4"/><path d="M12 12v9"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Cloud Migration &amp; Modernization</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Legacy PBX and on-prem contact centers replatformed to Amazon Connect — phased cutover, parallel run, zero missed calls.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-cyan-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+      <a href="/ai-solutions/contact-center/managed-ops-support.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="9.17" y1="14.83" x2="4.93" y2="19.07"/></svg></div>
+        <h3 class="text-lg font-bold text-slate-950 mb-2">Managed Operations &amp; Support</h3>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">Onsite lead, offshore delivery — release management, governance and production support so the platform stays healthy after go-live.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-rose-600 group-hover:gap-2.5 transition-all">View solution →</span>
+      </a>
+
+    </div>
+
+    <div class="mt-10 bg-slate-950 text-white rounded-3xl p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+      <div>
+        <div class="text-xs text-amber-300 font-bold uppercase tracking-wider mb-2">The full bundle</div>
+        <h3 class="text-xl md:text-2xl font-bold">One connected Amazon Connect programme</h3>
+        <p class="text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">Run them together and they compound: migration lands the platform, flows and routing carry the traffic, voice AI and integrations handle the volume, and QA plus managed ops keep it healthy in production. Each is independent — the bundle is where the leverage is.</p>
+      </div>
+      <a href="mailto:mkashifn@gmail.com?subject=Contact%20Center%20AI%20bundle" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Discuss a bundle →</a>
+    </div>
+
+  </section>
+
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · AI Solutions · Contact Center</div>
+      <div class="flex items-center gap-5">
+        <a href="/ai-solutions/" class="hover:text-amber-600 transition">All industries</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-emerald-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

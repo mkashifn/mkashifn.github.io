@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Lens QA & Compliance Analytics</title>
+  <meta name="description" content="Every call scored automatically for sentiment, script adherence and compliance risk with Amazon Connect Contact Lens — coaching signal for agents, evidence for auditors." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(245,158,11,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(6,182,212,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .node { transition: all .2s ease; }
+    .node:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .code-window { background:#0b1220; border-radius:16px; overflow:hidden; border:1px solid #1e293b; }
+    .code-head { display:flex; align-items:center; gap:8px; padding:12px 16px; background:#0f172a; border-bottom:1px solid #1e293b; }
+    .code-dot { width:11px; height:11px; border-radius:50%; }
+    .code-file { color:#94a3b8; font-size:12px; margin-left:8px; font-family:ui-monospace,monospace; }
+    .code-lang { margin-left:auto; color:#475569; font-size:10px; font-weight:700; letter-spacing:.08em; }
+    .code-body { margin:0; padding:18px 20px; overflow-x:auto; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+      font-size:12.5px; line-height:1.7; color:#e2e8f0; }
+    .kw{color:#c084fc} .st{color:#86efac} .cm{color:#64748b;font-style:italic} .fn{color:#7dd3fc} .nm{color:#fca5a5} .ty{color:#fcd34d}
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-4">
+      <a href="/ai-solutions/" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-amber-600 transition shrink-0">AI Solutions</a>
+      <span class="text-slate-300">/</span>
+      <a href="/ai-solutions/contact-center/" class="text-sm font-bold text-slate-500 hover:text-slate-800 transition">Contact Center</a>
+      <div class="ml-auto hidden sm:flex items-center gap-3">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-9 h-9 rounded-full object-cover ring-2 ring-amber-100" />
+        <span class="font-bold text-slate-900 text-sm">Kashif Naveed</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 md:py-16 fade-in">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-xs font-bold">QA &amp; compliance</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">Independent solution</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl">Contact Lens QA &amp; Compliance Analytics</h1>
+      <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">Every call scored for sentiment, script adherence and compliance risk — coaching signal for agents and supervisors, defensible evidence for auditors.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#how" class="inline-flex items-center gap-2 bg-slate-900 text-white rounded-xl px-5 py-3 font-bold text-sm shadow-soft hover:bg-slate-800 transition">How it works</a>
+        <a href="mailto:mkashifn@gmail.com?subject=Contact%20Lens%20QA%20%26%20Compliance" class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-5 py-3 font-bold text-sm text-slate-700 hover:border-teal-300 transition">Request a demo</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-6 py-14 space-y-14">
+
+    <section class="grid md:grid-cols-[1fr_300px] gap-8">
+      <div>
+        <div class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-3">The problem</div>
+        <h2 class="text-2xl font-bold text-slate-950">Manual QA sees 1-2% of calls — the rest is a blind spot</h2>
+        <p class="mt-3 text-slate-600 leading-7">Supervisors can only manually review a tiny fraction of calls, so most coaching opportunities go unseen and most compliance risk stays invisible until it becomes a complaint, a regulator finding, or a churned customer.</p>
+        <p class="mt-3 text-slate-600 leading-7">This solution scores every call for sentiment, disclosure and script adherence, and compliance risk — surfacing what needs a human's attention instead of asking humans to find it.</p>
+      </div>
+      <div class="bg-slate-950 text-white rounded-2xl p-6 self-start">
+        <div class="text-xs text-slate-400 mb-2">Primary objective</div>
+        <div class="font-semibold leading-6">Give every call the scrutiny only 1-2% used to get — without adding QA headcount.</div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-3">How it works</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-6">Capture call → score → flag risk → route to coaching/audit</h2>
+      <div class="bg-white border border-slate-200 rounded-3xl shadow-soft overflow-hidden">
+        <div class="grid-bg p-8 overflow-x-auto">
+          <div class="min-w-[820px] grid grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-3 items-stretch">
+            <div class="node bg-white border border-slate-200 rounded-2xl p-5">
+              <div class="w-11 h-11 rounded-xl bg-slate-50 text-slate-600 flex items-center justify-center mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
+              <div class="font-bold">Capture call</div>
+              <div class="text-xs text-slate-500 mt-1">Contact Lens transcribes &amp; analyses</div>
+            </div>
+            <div class="flex items-center justify-center text-slate-300 font-bold">→</div>
+            <div class="node bg-white border-2 border-teal-200 rounded-2xl p-5">
+              <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <div class="font-bold">Score</div>
+              <div class="text-xs text-slate-500 mt-1">Sentiment &amp; script adherence</div>
+            </div>
+            <div class="flex items-center justify-center text-slate-300 font-bold">→</div>
+            <div class="node bg-white border border-slate-200 rounded-2xl p-5">
+              <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div class="font-bold">Flag risk</div>
+              <div class="text-xs text-slate-500 mt-1">Compliance &amp; disclosure gaps</div>
+            </div>
+            <div class="flex items-center justify-center text-slate-300 font-bold">→</div>
+            <div class="node bg-white border border-slate-200 rounded-2xl p-5">
+              <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div class="font-bold">Route</div>
+              <div class="text-xs text-slate-500 mt-1">Coaching queue or audit trail</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-5">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-teal-600 uppercase tracking-wider">What it does</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ 100% call coverage scoring</li>
+          <li>✓ Sentiment &amp; tone tracking</li>
+          <li>✓ Script &amp; disclosure adherence</li>
+          <li>✓ Compliance risk flagging</li>
+          <li>✓ Auto-built coaching queues</li>
+          <li>✓ Trend dashboards by team</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-teal-600 uppercase tracking-wider">Built with</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ Amazon Connect Contact Lens</li>
+          <li>✓ AWS Lambda + EventBridge</li>
+          <li>✓ Amazon CloudWatch</li>
+          <li>✓ Amazon DynamoDB</li>
+          <li>✓ QuickSight-based reporting</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-teal-600 uppercase tracking-wider">Guardrails</div>
+        <ul class="mt-4 space-y-3 text-sm text-slate-600">
+          <li>✓ Human review of every flag</li>
+          <li>✓ No automated penalties</li>
+          <li>✓ PII masking in transcripts</li>
+          <li>✓ Configurable rule sets</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-3">Under the hood</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-2">Risk flags land with a supervisor, not a scoreboard</h2>
+      <p class="text-slate-600 mb-5 max-w-2xl">Contact Lens analytics fire an event the moment a call ends. Flagged calls go straight to a supervisor's review queue — the model surfaces risk, a person decides what it means.</p>
+      <div class="code-window">
+        <div class="code-head">
+          <span class="code-dot" style="background:#ff5f57"></span>
+          <span class="code-dot" style="background:#febc2e"></span>
+          <span class="code-dot" style="background:#28c840"></span>
+          <span class="code-file">connect/contact_lens_flag.py</span>
+          <span class="code-lang">PYTHON</span>
+        </div>
+<pre class="code-body"><span class="kw">import</span> boto3
+
+connect = boto3.<span class="fn">client</span>(<span class="st">"connect"</span>)
+dynamodb = boto3.<span class="fn">resource</span>(<span class="st">"dynamodb"</span>).<span class="fn">Table</span>(<span class="st">"qa-review-queue"</span>)
+
+RISK_TERMS = [<span class="st">"cancel policy"</span>, <span class="st">"refund guarantee"</span>, <span class="st">"not disclosed"</span>]
+
+<span class="kw">def</span> <span class="fn">handle_contact_lens_event</span>(event: <span class="ty">dict</span>) -> <span class="ty">None</span>:
+    analytics = connect.<span class="fn">get_contact_attributes</span>(
+        InstanceId=event[<span class="st">"instanceId"</span>], InitialContactId=event[<span class="st">"contactId"</span>])
+    sentiment = analytics[<span class="st">"Attributes"</span>].<span class="fn">get</span>(<span class="st">"OverallSentiment"</span>)
+    transcript = analytics[<span class="st">"Attributes"</span>].<span class="fn">get</span>(<span class="st">"Transcript"</span>, <span class="st">""</span>)
+
+    <span class="cm"># Flag for a human — never auto-score an agent's record</span>
+    risk_hits = [t <span class="kw">for</span> t <span class="kw">in</span> RISK_TERMS <span class="kw">if</span> t <span class="kw">in</span> transcript.<span class="fn">lower</span>()]
+    <span class="kw">if</span> sentiment == <span class="st">"NEGATIVE"</span> <span class="kw">or</span> risk_hits:
+        dynamodb.<span class="fn">put_item</span>(Item={
+            <span class="st">"contact_id"</span>: event[<span class="st">"contactId"</span>], <span class="st">"sentiment"</span>: sentiment,
+            <span class="st">"risk_terms"</span>: risk_hits, <span class="st">"status"</span>: <span class="st">"pending_review"</span>})</pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-3">Outcomes</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">100%</div><div class="text-sm text-slate-500 mt-1">Of calls reviewed</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">Minutes</div><div class="text-sm text-slate-500 mt-1">Not weeks, to surface risk</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">Fewer</div><div class="text-sm text-slate-500 mt-1">Compliance findings</div></div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6"><div class="text-3xl font-bold text-slate-950">Faster</div><div class="text-sm text-slate-500 mt-1">Coaching cycles</div></div>
+      </div>
+    </section>
+
+    <section class="bg-slate-950 text-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold">See every call, not just the sample</h3>
+        <p class="text-sm text-slate-300 mt-2">Deploy standalone, or pair it with Conversational Voice AI to score bot and human interactions the same way.</p>
+      </div>
+      <a href="mailto:mkashifn@gmail.com?subject=Contact%20Lens%20QA%20%26%20Compliance" class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-slate-950 rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Start a conversation →</a>
+    </section>
+
+    <section>
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More Contact Center solutions</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/ai-solutions/contact-center/contact-flow-routing.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Contact Flow &amp; Routing Designer</span><span class="text-amber-600">→</span></a>
+        <a href="/ai-solutions/contact-center/conversational-voice-ai.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Conversational Voice AI</span><span class="text-purple-600">→</span></a>
+        <a href="/ai-solutions/contact-center/managed-ops-support.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Managed Operations &amp; Support</span><span class="text-rose-600">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · AI Solutions · Contact Center</div>
+      <div class="flex items-center gap-5">
+        <a href="/ai-solutions/contact-center/" class="hover:text-amber-600 transition">All solutions</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-emerald-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
