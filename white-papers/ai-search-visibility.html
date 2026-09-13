@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How to Make Your Brand Appear in AI Search</title>
-  <meta name="description" content="A white paper on Generative Engine Optimization (GEO/AEO): a formal probabilistic model of AI-search citation, a monotonicity proof for the six levers that drive it, a worked numeric example, a proof for which lever to fix first under a limited budget, and a difference-in-differences design for measuring the effect. Downloadable as PDF." />
+  <meta name="description" content="A white paper on Generative Engine Optimization (GEO/AEO): a formal probabilistic model of AI-search citation, a monotonicity proof for the six levers that drive it, a signaling-theory argument for why independent evidence is credible, a worked numeric example with a 13-metric audit sheet, a proof for which lever to fix first under a limited budget, and a difference-in-differences design for measuring the effect. Downloadable as PDF." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { boxShadow: {
@@ -132,9 +132,12 @@
         <p class="mt-3 text-slate-600 leading-7">
           Sections 1–3 define AI visibility as a measurable quantity. Section 4 models it as a logistic
           function of six evidence factors and <em>proves</em> the function is strictly increasing in
-          each one (Theorem 1), worked through with a running numeric example (a brand called Acme).
-          Section 5 then asks the practical question, given a limited budget, which lever to fix
+          each one (Theorem 1), worked through with a running numeric example, a brand called Acme, down
+          to the 13 raw metrics (backlinks, referring domains, review volume, and so on) behind its
+          scores. Section 5 then asks the practical question, given a limited budget, which lever to fix
           <em>first</em>, and proves it's the cheapest high-coefficient one, not the biggest coefficient.
+          Section 6 adds a game-theoretic argument, a signaling model, for why independent evidence is
+          trustworthy in the first place, and why buying it (fake reviews, link farms) doesn't work.
           Section 7 turns all of this from theory into a measurement protocol, including a control-group
           design for isolating causal effect from background noise.
         </p>
@@ -156,7 +159,7 @@
           <a href="#objective" class="text-slate-600 hover:text-indigo-600 transition">3. The objective as an expectation</a>
           <a href="#model" class="text-slate-600 hover:text-indigo-600 transition">4. The evidence model &amp; Theorem 1</a>
           <a href="#efficiency" class="text-slate-600 hover:text-indigo-600 transition">5. The most efficient lever</a>
-          <a href="#evidence" class="text-slate-600 hover:text-indigo-600 transition">6. Evidence accumulation</a>
+          <a href="#evidence" class="text-slate-600 hover:text-indigo-600 transition">6. Evidence accumulation &amp; signaling</a>
           <a href="#measurement" class="text-slate-600 hover:text-indigo-600 transition">7. Measuring it: estimators &amp; DiD</a>
           <a href="#levers" class="text-slate-600 hover:text-indigo-600 transition">8. The six levers</a>
           <a href="#playbook" class="text-slate-600 hover:text-indigo-600 transition">9. A 90-day plan</a>
@@ -288,6 +291,32 @@
           </div>
           <p class="mt-4 text-sm text-slate-600 leading-relaxed">A predicted 12% baseline citation probability, matching the \(\hat p_{\text{before}}=12\%\) measured for Acme's optimized-topic group in Section 7's difference-in-differences example. Section 5 asks: of the six levers, which is the most efficient one to fix first?</p>
         </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Acme's raw audit sheet: from 13 metrics to six factors</div>
+          <p class="text-sm text-slate-600 leading-relaxed">The \(R,A,E,T,S,F\) scores above aren't measured directly, they're a normalized roll-up of the ordinary metrics an audit tool or analyst actually pulls. Below is the audit behind Acme's baseline, each raw metric mapped to the factor it feeds, benchmarked against the category leader:</p>
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="text-left text-slate-400"><th class="pb-2 pr-4 font-semibold">Raw metric</th><th class="pb-2 pr-4 font-semibold">Feeds</th><th class="pb-2 pr-4 font-semibold">Acme</th><th class="pb-2 font-semibold">Category leader</th></tr></thead>
+              <tbody class="text-slate-700">
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Referring domains</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">A</td><td class="py-2 pr-4">85</td><td class="py-2">~600</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Backlinks (total)</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">A</td><td class="py-2 pr-4">340</td><td class="py-2">~12,000</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Domain authority (0–100)</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">A</td><td class="py-2 pr-4">28</td><td class="py-2">~74</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Independent mentions (12mo)</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">E</td><td class="py-2 pr-4">6</td><td class="py-2">~140</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">High-authority citations</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">E</td><td class="py-2 pr-4">1</td><td class="py-2">~18</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Review volume (G2+Capterra+Trustpilot)</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">E</td><td class="py-2 pr-4">42</td><td class="py-2">~2,300</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Third-party articles (independent)</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">E</td><td class="py-2 pr-4">9</td><td class="py-2">~85</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Comparison pages ("Acme vs X")</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">T</td><td class="py-2 pr-4">3, all self-authored</td><td class="py-2">40+, mostly independent</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Page depth (of 30 buyer questions in \(Q\) with a dedicated page)</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">T</td><td class="py-2 pr-4">14/30</td><td class="py-2">28/30</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Topical relevance (avg. embedding similarity to \(Q\))</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">R</td><td class="py-2 pr-4">0.52</td><td class="py-2">0.81</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Structured-data completeness (of 10 core schema fields)</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">S</td><td class="py-2 pr-4">2/10, 3 conflicting name variants</td><td class="py-2">10/10, 1 canonical name</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4">Content freshness (median days since last fact-check)</td><td class="py-2 pr-4 font-mono text-xs text-indigo-700">F</td><td class="py-2 pr-4">45 days</td><td class="py-2">12 days</td></tr>
+                <tr class="border-t border-slate-100 bg-amber-50/60"><td class="py-2 pr-4">Brand-search volume (monthly)</td><td class="py-2 pr-4 font-mono text-xs text-amber-700">check</td><td class="py-2 pr-4">1,100</td><td class="py-2">~48,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">Rows 1–12 roll up, after min-max normalization against the category benchmark column, into the \(R,A,E,T,S,F\) scores above: \(A\) is dragged down by thin backlinks and domain authority; \(E\) by almost no high-authority citations or independent articles; \(T\) because Acme's three comparison pages are all self-authored, none of the leader's 40+ are; \(S\) by the split naming and near-empty schema. Brand-search volume isn't one of the six factors, it's the cross-check used in Section 6: a real signal of quality should show up there too.</p>
+        </div>
       </div>
     </section>
 
@@ -344,7 +373,7 @@
 
     <!-- 6. EVIDENCE ACCUMULATION -->
     <section id="evidence">
-      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">6. Evidence accumulation</div>
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">6. Evidence accumulation &amp; signaling</div>
       <h2 class="text-2xl font-bold text-slate-950 mb-4">Why one page you wrote is worth less than five independent ones</h2>
       <p class="text-slate-600 leading-7 max-w-3xl">
         The authority and evidence factors above (\(A, E\)) are themselves built from many independent
@@ -367,9 +396,23 @@
         <div class="eqbox">$$\text{Brand strength} \ \propto\ \text{Authority} \times \text{Relevance} \times \text{Evidence density} \times \text{Consistency}$$</div>
         <p class="text-sm text-slate-600 mt-3 leading-relaxed">Unlike Theorem 1, this proportionality is a conceptual heuristic for why distributed third-party evidence compounds rather than adds, it is not proved from first principles here. It explains, informally, why 500 brand-authored blog posts move the needle far less than 20 independent ones: they add to only one node's out-degree, not to the density of the surrounding subgraph.</p>
       </div>
+
+      <div class="mt-6 bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Proposition 3: evidence as a costly signal (Spence, 1973)</div>
+        <p class="text-sm text-slate-600 leading-relaxed">The heuristic above says independent evidence compounds. Game theory says why an AI system is <em>right</em> to trust it. Model each brand as having a true, unobserved quality \(\tau \in \{\tau_L,\tau_H\}\), \(\tau_H&gt;\tau_L&gt;0\), the AI system cannot see directly. It observes only the evidence level \(E_B\) built up above, and recommends the brand if it does so, worth \(v\) to the brand. Producing \(E_B\) isn't free: assume a cost</p>
+        <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+          $$c(E_B, \tau) = \frac{E_B^2}{2\tau}$$
+        </div>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed">This satisfies the single-crossing (Spence-Mirrlees) condition, marginal cost falls as true quality rises, a genuinely good product earns reviews and press more cheaply than a mediocre one manufacturing the same volume. In the least-cost separating equilibrium, the low type produces nothing (\(E_{B,L}^\ast=0\)) and the high type produces just enough that the low type is indifferent to imitating it:</p>
+        <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+          $$c(E_{B,H}^\ast, \tau_L) = v \;\Longrightarrow\; \frac{(E_{B,H}^\ast)^2}{2\tau_L} = v \;\Longrightarrow\; E_{B,H}^\ast = \sqrt{2v\tau_L}$$
+        </div>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed"><span class="font-bold text-slate-800">Check.</span> At \(E_{B,H}^\ast\), the low type's cost to mimic is \(c(E_{B,H}^\ast,\tau_L)=v\), exactly the reward, so it's indifferent and (with any tie-break toward truth-telling) reveals itself. The genuine high type's cost is \(c(E_{B,H}^\ast,\tau_H) = v\tau_L/\tau_H &lt; v\), strictly less than the reward, so it strictly prefers to signal. The equilibrium separates, and evidence becomes fully informative: this is the formal reason Theorem&nbsp;1 is right to give \(E\) a positive, trusted \(\beta_k\).</p>
+        <p class="mt-3 text-sm text-slate-600 leading-relaxed"><span class="font-bold text-slate-800">Corollary 2, why buying fake reviews backfires.</span> The equilibrium only holds while faking \(E_B\) is genuinely costly for the low type. Link farms, incentivized reviews and AI-written "independent" roundups all lower that cost; providers respond by investing in detection precisely because a cheaply-faked signal stops separating types and \(E\)'s trustworthiness (and effective \(\beta_k\)) collapses toward zero for everyone, not just the cheater. A cheap sanity check: cross \(E_B\) against something a low type can't cheaply fake, brand-search volume (row 13 of Section 4's audit sheet). Evidence rising while branded search stays flat is the signature of manufactured, not earned, signal.</p>
+      </div>
     </section>
 
-    <!-- 6. MEASUREMENT -->
+    <!-- 7. MEASUREMENT -->
     <section id="measurement">
       <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">7. Measuring it</div>
       <h2 class="text-2xl font-bold text-slate-950 mb-4">From estimator to causal proof</h2>
@@ -434,7 +477,7 @@
       </div>
     </section>
 
-    <!-- 7. SIX LEVERS -->
+    <!-- 8. SIX LEVERS -->
     <section id="levers">
       <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">8. The six levers</div>
       <h2 class="text-2xl font-bold text-slate-950 mb-6">What Theorem 1's factors mean in practice</h2>
@@ -466,7 +509,7 @@
       </div>
     </section>
 
-    <!-- 8. PLAYBOOK -->
+    <!-- 9. PLAYBOOK -->
     <section id="playbook">
       <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">9. The playbook</div>
       <h2 class="text-2xl font-bold text-slate-950 mb-6">Turning Theorem 1 into a 90-day plan</h2>
@@ -490,15 +533,15 @@
       </div>
     </section>
 
-    <!-- 9. CAVEATS -->
+    <!-- 10. CAVEATS -->
     <section id="caveats">
       <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">10. Scope &amp; caveats</div>
       <h2 class="text-2xl font-bold text-slate-950 mb-4">What this model is, and isn't</h2>
       <ul class="mt-2 space-y-3 text-sm text-slate-600 max-w-3xl leading-relaxed list-disc pl-5">
-        <li><strong>Acme is an illustrative composite, not an actual company.</strong> Every number attached to it (its factor scores, coefficients, costs, and the 12%/26%/28% figures in Sections 4, 5 and 7) is a worked example chosen to be internally consistent and realistic in scale, not a measurement of any real business.</li>
+        <li><strong>Acme is an illustrative composite, not an actual company.</strong> Every number attached to it, its factor scores, coefficients, costs, the 12%/26%/28% figures in Sections 4, 5 and 7, and the 13-row audit sheet in Section 4 (backlinks, referring domains, review counts, and the rest), is a worked example chosen to be internally consistent and realistic in scale, not a measurement of any real business.</li>
         <li>\(\sigma(z_B)\) in Section 4 is a stylized model built to be qualitatively robust, not a disclosed or reverse-engineered ranking function of any specific AI search product, those are proprietary and change frequently.</li>
         <li>Theorem 1 and Corollary 1 are proved <em>from the model's stated assumptions</em> (\(\beta_k&gt;0\)), which is a directional claim, "these factors don't hurt, and returns diminish", not a numeric guarantee for any one brand. Proposition 2's costs \(c_k\) are illustrative planning estimates, not measured figures either.</li>
-        <li>Section 6's proportionality is explicitly flagged as a heuristic, not a derived result, unlike Theorem 1.</li>
+        <li>Section 6's proportionality heuristic and Proposition 3's signaling model are both stylized: real evidence-production costs aren't literally quadratic, and no AI provider is known to run a two-type Spence game internally. The result that matters is qualitative, corroborated evidence is credible because and only while it stays costly to fake, not the specific functional form.</li>
         <li>Section 7.5's regression establishes association; only the controlled experiment in §7.3, run on your own site, supports a causal claim about your own intervention.</li>
         <li>Be skeptical of anyone selling a specific "AI schema" as a guaranteed unlock, the model here argues for a portfolio of ordinary, verifiable signals (relevance, authority, evidence, coverage, clarity, freshness), not a trick.</li>
       </ul>
