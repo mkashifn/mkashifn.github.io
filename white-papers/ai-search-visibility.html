@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Make Your Brand Appear in AI Search</title>
+  <meta name="description" content="A white paper on Generative Engine Optimization (GEO/AEO), a formal probabilistic model of AI-search citation, a monotonicity proof for the six levers that drive it, and an experimental design (difference-in-differences) for measuring the effect. Downloadable as PDF." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(79,70,229,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(217,70,239,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .shake { animation: shake .35s ease; }
+    @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
+    .eqbox { overflow-x: auto; }
+    .eqbox .katex-display { margin: 0; }
+    @media print {
+      #gate { display: none !important; }
+      #content { display: block !important; }
+      header, .no-print { display: none !important; }
+      body { background: #fff !important; }
+      a[href]:after { content: none !important; }
+      .card:hover { transform: none !important; box-shadow: none !important; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- ========================================================= -->
+  <!-- PASSWORD GATE (not real security, a lightweight gate for a gated download) -->
+  <!-- ========================================================= -->
+  <div id="gate" class="fixed inset-0 z-50 bg-slate-950 text-white flex items-center justify-center px-6">
+    <div id="gate-box" class="max-w-sm w-full text-center">
+      <div class="w-14 h-14 mx-auto rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+        </svg>
+      </div>
+      <h1 class="text-xl font-bold">Gated white paper</h1>
+      <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+        This one's behind a password. Not a good password, an AI-search-brained one.
+        Hint: it's what the model thinks it is right before it hallucinates a citation.
+      </p>
+      <form id="gate-form" class="mt-6 flex flex-col gap-3">
+        <input id="gate-input" type="password" autocomplete="off" placeholder="Enter password"
+               class="w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-400" />
+        <button type="submit" class="w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-sm px-4 py-3 transition">Unlock white paper</button>
+      </form>
+      <p id="gate-error" class="mt-3 text-sm text-rose-400 hidden">Not quite. Think dumber.</p>
+      <p class="mt-6 text-xs text-slate-600">It's fake security for a free PDF. Open devtools if you must.</p>
+    </div>
+  </div>
+
+  <div id="content" class="hidden">
+
+  <!-- ========================================================= -->
+  <!-- HEADER -->
+  <!-- ========================================================= -->
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-4">
+      <a href="/white-papers/" class="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-indigo-600 transition shrink-0">White Papers</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-sm font-bold text-slate-500">AI Search Visibility</span>
+      <div class="ml-auto hidden sm:flex items-center gap-3">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-9 h-9 rounded-full object-cover ring-2 ring-indigo-100" />
+        <span class="font-bold text-slate-900 text-sm">Kashif Naveed</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- HERO -->
+  <!-- ========================================================= -->
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-14 md:py-16 fade-in">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold">White paper</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">GEO / AEO</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">~15 min read</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl">
+        How to Make Your Brand Appear in AI Search
+      </h1>
+      <p class="mt-2 text-sm font-semibold text-slate-500">A formal model of AI-search citation, with a monotonicity proof and an experimental design for measuring it</p>
+      <p class="mt-4 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl">
+        Modern answer engines don't rank pages, they retrieve evidence and generate one answer, naming
+        zero, one, or a few brands. This paper defines AI visibility as a probability, builds a
+        logistic evidence model of what moves that probability, proves it is monotonic in six
+        measurable levers, and lays out a difference-in-differences design for proving, not just
+        claiming, that an intervention worked.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="/white-papers/ai-search-visibility.pdf" download
+           class="no-print inline-flex items-center gap-2 bg-indigo-600 text-white rounded-xl px-5 py-3 font-bold text-sm shadow-soft hover:bg-indigo-500 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12M12 16.5V3" /></svg>
+          Download PDF
+        </a>
+        <a href="#model" class="no-print inline-flex items-center gap-2 bg-slate-900 text-white rounded-xl px-5 py-3 font-bold text-sm shadow-soft hover:bg-slate-800 transition">Jump to the proof</a>
+        <a href="mailto:mkashifn@gmail.com?subject=AI%20Search%20Visibility%20-%20enquiry" class="no-print inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-5 py-3 font-bold text-sm text-slate-700 hover:border-indigo-300 transition">Enquire</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-6 py-14 space-y-14">
+
+    <!-- EXECUTIVE SUMMARY -->
+    <section class="grid md:grid-cols-[1fr_300px] gap-8">
+      <div>
+        <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">Executive summary</div>
+        <h2 class="text-2xl font-bold text-slate-950">Being findable and being citable are now different problems</h2>
+        <p class="mt-3 text-slate-600 leading-7">
+          Ranking #1 on a search results page used to be enough, a human would scroll to your link.
+          An answer engine skips the page entirely: it retrieves a handful of passages, reasons over
+          them, and writes one answer. Your brand either enters that working set and gets named, or it
+          doesn't exist for that query.
+        </p>
+        <p class="mt-3 text-slate-600 leading-7">
+          Sections 1–3 define AI visibility as a measurable quantity. Section 4 models it as a logistic
+          function of six evidence factors and <em>proves</em> the function is strictly increasing in
+          each one (Theorem 1), with a concavity corollary explaining why a spread portfolio of
+          improvements beats maxing out a single lever. Section 7 turns this from theory into a
+          measurement protocol, including a control-group design for isolating causal effect from
+          background noise.
+        </p>
+      </div>
+      <div class="bg-slate-950 text-white rounded-2xl p-6 self-start">
+        <div class="text-xs text-slate-400 mb-2">Core objective</div>
+        <div class="font-semibold leading-6 eqbox">$$\max_{B}\ \mathbb{E}_{q\sim Q}\big[P_B(q)\big]$$</div>
+        <div class="text-xs text-slate-400 mt-3 leading-relaxed">Maximize the expected probability that the AI includes brand <em>B</em> across the query universe <em>Q</em> a customer actually asks.</div>
+      </div>
+    </section>
+
+    <!-- CONTENTS -->
+    <section class="no-print">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Contents</div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 text-sm">
+          <a href="#definitions" class="text-slate-600 hover:text-indigo-600 transition">1. Defining AI visibility</a>
+          <a href="#dimensions" class="text-slate-600 hover:text-indigo-600 transition">2. Mention, recommendation, citation</a>
+          <a href="#objective" class="text-slate-600 hover:text-indigo-600 transition">3. The objective as an expectation</a>
+          <a href="#model" class="text-slate-600 hover:text-indigo-600 transition">4. The evidence model &amp; Theorem 1</a>
+          <a href="#evidence" class="text-slate-600 hover:text-indigo-600 transition">5. Evidence accumulation</a>
+          <a href="#measurement" class="text-slate-600 hover:text-indigo-600 transition">6. Measuring it: estimators &amp; DiD</a>
+          <a href="#levers" class="text-slate-600 hover:text-indigo-600 transition">7. The six levers</a>
+          <a href="#playbook" class="text-slate-600 hover:text-indigo-600 transition">8. A 90-day plan</a>
+          <a href="#caveats" class="text-slate-600 hover:text-indigo-600 transition">9. Scope &amp; caveats</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. DEFINITIONS -->
+    <section id="definitions">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">1. Defining AI visibility</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">A brand either appears in the answer, or it doesn't</h2>
+      <p class="text-slate-600 leading-7 max-w-3xl">
+        Fix a brand \(B\) and a finite set of commercially relevant questions, the <em>query universe</em>:
+      </p>
+      <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">$$Q = \{q_1, q_2, \ldots, q_n\}$$</div>
+      <p class="mt-4 text-slate-600 leading-7 max-w-3xl">
+        e.g. "best project management software for agencies," "alternatives to Asana," "how should an
+        agency manage client projects?", the informational, commercial, comparative and problem-oriented
+        questions a real buyer asks before purchasing. Define the appearance indicator:
+      </p>
+      <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+        $$V(B,q)=\begin{cases} 1 &amp; \text{if } B \text{ appears in the AI answer to } q \\ 0 &amp; \text{otherwise} \end{cases}$$
+      </div>
+      <p class="mt-4 text-slate-600 leading-7 max-w-3xl">The simplest visibility statistic is the sample mean of this indicator over the query universe:</p>
+      <div class="mt-4 bg-white border border-slate-200 rounded-xl p-6">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Definition 1: AI Visibility Rate</div>
+        <div class="eqbox">$$\mathrm{AIV}(B) = \frac{1}{n}\sum_{i=1}^{n} V(B, q_i)$$</div>
+        <p class="text-sm text-slate-600 mt-3">If \(B\) appears in 37 of 100 representative queries, \(\mathrm{AIV}(B) = 0.37\). This is already a measurable KPI, Section 6 treats it as a statistical estimator with a confidence interval, not just a percentage.</p>
+      </div>
+    </section>
+
+    <!-- 2. THREE DIMENSIONS -->
+    <section id="dimensions">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">2. Three dimensions of appearing</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">Mentioned, recommended, and cited are not the same event</h2>
+      <p class="text-slate-600 leading-7 max-w-3xl">Refine the single indicator \(V\) into three binary sub-indicators of increasing commercial value:</p>
+      <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+        $$M(B,q),\ R_{\text{ec}}(B,q),\ C(B,q) \in \{0,1\}$$
+      </div>
+      <p class="mt-4 text-slate-600 leading-7 max-w-3xl">these are mentioned, recommended, and cited (backed by a named source), respectively, and combine them into a weighted score:</p>
+      <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+        $$S(B,q) = w_m M(B,q) + w_r R_{\text{ec}}(B,q) + w_c C(B,q), \qquad w_m+w_r+w_c=1$$
+      </div>
+      <p class="mt-4 text-slate-600 leading-7 max-w-3xl">
+        With, say, \(w_m=0.2,\ w_r=0.4,\ w_c=0.4\): a bare mention scores \(0.2\); a recommendation scores
+        \(0.4\); a recommendation backed by a citation scores \(0.8\). This is a considerably more useful
+        signal than a binary "we showed up", it separates being named from being endorsed.
+      </p>
+    </section>
+
+    <!-- 3. OBJECTIVE -->
+    <section id="objective">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">3. The objective as an expectation</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">Treat appearance as a probability, not a binary fact</h2>
+      <p class="text-slate-600 leading-7 max-w-3xl">
+        A given brand doesn't deterministically appear or not for a given query, sampling temperature,
+        retrieval variance, and index drift make it a random event. Define:
+      </p>
+      <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">$$P_B(q) := \Pr(B \text{ appears in the answer} \mid q)$$</div>
+      <p class="mt-4 text-slate-600 leading-7 max-w-3xl">and the optimization target is the expectation of this probability over the query universe a real buyer asks:</p>
+      <div class="mt-4 bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">The objective</div>
+        <div class="eqbox">$$\max_{B}\ \mathbb{E}_{q\sim Q}\big[P_B(q)\big]$$</div>
+        <p class="text-sm text-slate-600 mt-3 leading-relaxed">In plain language: maximize the probability that the AI includes your brand, averaged over the commercially relevant questions people actually ask. Section 4 asks what \(P_B(q)\) is a function of.</p>
+      </div>
+    </section>
+
+    <!-- 4. MODEL + THEOREM -->
+    <section id="model">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">4. The evidence model</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">Theorem 1: citation probability is monotonic in every lever</h2>
+      <p class="text-slate-600 leading-7 max-w-3xl">
+        No AI search provider publishes its ranking function, and this is not a claim to have reverse
+        engineered one. It is a stylized, testable model, a logistic function of six factors known to
+        matter to retrieval-and-generation systems generally, built so its qualitative predictions
+        (monotonicity, diminishing returns) hold for a wide family of coefficient values, not one
+        guessed set of weights.
+      </p>
+
+      <div class="mt-8 space-y-6">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Definition 2: the six evidence factors</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Let \(R,A,E,T,S,F \in [0,1]\) denote, respectively, a brand's <strong>r</strong>elevance to the query, <strong>a</strong>uthority, independent <strong>e</strong>vidence, <strong>t</strong>opical coverage, <strong>s</strong>emantic/entity clarity, and content <strong>f</strong>reshness. Define the linear predictor and the logistic citation probability:</p>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$z_B(q) = \beta_0 + \beta_1 R + \beta_2 A + \beta_3 E + \beta_4 T + \beta_5 S + \beta_6 F$$
+            $$P_B(q) = \sigma\big(z_B(q)\big), \qquad \sigma(x) = \frac{1}{1+e^{-x}}$$
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Theorem 1: monotonicity</div>
+          <p class="text-sm text-slate-600 leading-relaxed">If \(\beta_k &gt; 0\) for every \(k=1,\ldots,6\), i.e. each factor genuinely helps and none hurts, then for every factor \(x_k \in \{R,A,E,T,S,F\}\):</p>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$\frac{\partial P_B}{\partial x_k} = \beta_k\,\sigma\big(z_B\big)\big(1-\sigma\big(z_B\big)\big) \;&gt;\; 0$$
+          </div>
+          <p class="mt-4 text-sm text-slate-600 leading-relaxed"><span class="font-bold text-slate-800">Proof.</span> The logistic function satisfies \(\sigma'(z) = \sigma(z)\big(1-\sigma(z)\big)\), which is strictly positive for every finite \(z\) since \(\sigma(z) \in (0,1)\). By the chain rule, \(\partial P_B/\partial x_k = \beta_k \cdot \sigma'(z_B)\). Since \(\beta_k &gt; 0\) by hypothesis and \(\sigma'(z_B) &gt; 0\) always, the product is strictly positive. \(\blacksquare\)</p>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">Every lever that genuinely carries positive weight strictly raises citation probability, none of the six factors can be safely ignored, and none can hurt you by being improved.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Corollary 1: diminishing returns, and why to diversify</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Differentiating again, \(\sigma''(z) = \sigma'(z)\big(1-2\sigma(z)\big)\), which changes sign at \(\sigma(z)=\tfrac12\) (i.e. \(z=0\)). For \(z&gt;0\), \(\sigma''(z)&lt;0\): the marginal gain \(\sigma'(z)\) is <em>falling</em> as \(z\) grows. Since \(\partial^2 P_B/\partial x_k^2 = \beta_k^2\,\sigma''(z_B)\) has the same sign as \(\sigma''(z_B)\), \(P_B\) is concave in each \(x_k\) once \(z_B&gt;0\).</p>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$\frac{\partial^2 P_B}{\partial x_k^2} = \beta_k^2\,\sigma'(z_B)\big(1-2\sigma(z_B)\big) \;&lt;\; 0 \quad \text{once } z_B&gt;0$$
+          </div>
+          <p class="mt-4 text-sm text-slate-600 leading-relaxed">A budget-constrained optimum equalizes marginal effect \(\beta_k\sigma'(z_B)\) <em>across</em> the six levers rather than exhausting it on whichever is already strongest. In practice: once one lever (say authority) has already pushed \(z_B\) well past zero, another unit of authority buys less citation probability than the same unit spent raising a neglected lever (say freshness), the formal reason a diversified GEO program outperforms a single-tactic one.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EVIDENCE ACCUMULATION -->
+    <section id="evidence">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">5. Evidence accumulation</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">Why one page you wrote is worth less than five independent ones</h2>
+      <p class="text-slate-600 leading-7 max-w-3xl">
+        The authority and evidence factors above (\(A, E\)) are themselves built from many independent
+        sources. Model each source \(i\) as contributing evidence \(e_i\), weighted by its own credibility
+        \(w_i\), into a pooled evidence score, which crosses a threshold \(\theta\) before the system is
+        confident enough to recommend:
+      </p>
+      <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+        $$E_B = \sum_{i=1}^{k} w_i e_i, \qquad \Pr(\text{recommend}\mid E_B) = \sigma\big(E_B - \theta\big)$$
+      </div>
+      <p class="mt-4 text-slate-600 leading-7 max-w-3xl">
+        A weak brand might sit at \(E_B=1.2\), an established one at \(E_B=7.8\), a category leader at
+        \(E_B=15.4\), as independent, credible evidence accumulates, \(\sigma(E_B-\theta)\) rises toward 1.
+        Treated as a graph, brand, product, category, publication, and customer nodes, connected by
+        "mentions" and "reviews" edges, the practical goal is a <em>dense, consistent subgraph</em> around
+        the brand:
+      </p>
+      <div class="mt-4 bg-white border border-slate-200 rounded-2xl p-6">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Modeling heuristic, not a derived identity</div>
+        <div class="eqbox">$$\text{Brand strength} \ \propto\ \text{Authority} \times \text{Relevance} \times \text{Evidence density} \times \text{Consistency}$$</div>
+        <p class="text-sm text-slate-600 mt-3 leading-relaxed">Unlike Theorem 1, this proportionality is a conceptual heuristic for why distributed third-party evidence compounds rather than adds, it is not proved from first principles here. It explains, informally, why 500 brand-authored blog posts move the needle far less than 20 independent ones: they add to only one node's out-degree, not to the density of the surrounding subgraph.</p>
+      </div>
+    </section>
+
+    <!-- 6. MEASUREMENT -->
+    <section id="measurement">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">6. Measuring it</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">From estimator to causal proof</h2>
+
+      <div class="space-y-6">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">6.1: Point estimate and confidence interval</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Sampling \(n\) queries and counting \(x\) appearances gives the estimator \(\hat p = x/n\) for \(\mathrm{AIV}(B)\), with the usual normal-approximation interval:</p>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$\hat p = \frac{x}{n}, \qquad \hat p \;\pm\; z_{\alpha/2}\sqrt{\frac{\hat p(1-\hat p)}{n}}$$
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">6.2: Before / after lift</div>
+          <p class="text-sm text-slate-600 leading-relaxed">With \(n=1{,}000\) prompts, \(x=120\) mentions before optimization gives \(\hat p_{\text{before}}=12\%\); \(x=230\) after gives \(\hat p_{\text{after}}=23\%\):</p>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$\Delta = \hat p_{\text{after}} - \hat p_{\text{before}} = 11\text{ pp}, \qquad \frac{\Delta}{\hat p_{\text{before}}} = \frac{11}{12} \approx 91.7\%\text{ relative lift}$$
+          </div>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">Measurable, but not yet <em>causal</em>. AI visibility can drift for everyone as models and indices change; a single before/after comparison can't separate your intervention from that drift.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">6.3: Difference-in-differences, isolating the causal effect</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Optimize 50 topics; hold out 50 comparable topics as an unoptimized control:</p>
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="text-left text-slate-400"><th class="pb-2 pr-4 font-semibold"></th><th class="pb-2 pr-4 font-semibold">Before</th><th class="pb-2 font-semibold">After</th></tr></thead>
+              <tbody class="text-slate-700">
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4 font-semibold">Optimized topics</td><td class="py-2 pr-4">12%</td><td class="py-2">28%</td></tr>
+                <tr class="border-t border-slate-100"><td class="py-2 pr-4 font-semibold">Control topics</td><td class="py-2 pr-4">11%</td><td class="py-2">14%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$\widehat{\mathrm{DiD}} = (\hat p_{T,\text{after}} - \hat p_{T,\text{before}}) - (\hat p_{C,\text{after}} - \hat p_{C,\text{before}}) = (28-12)-(14-11) = \boxed{13\text{ pp}}$$
+          </div>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">The control group's 3-point drift is background noise (new model version, seasonal demand, whatever). Subtracting it leaves 13 points attributable to the intervention, far stronger evidence than "our AI visibility went up."</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">6.4: A composite tracking score and competitive share</div>
+          <p class="text-sm text-slate-600 leading-relaxed">For a weekly dashboard, combine visibility, recommendation rate, citation rate, and competitive share of voice into one composite:</p>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$\mathrm{AIS} = V \times \mathrm{Rec} \times \mathrm{Cit} \times \mathrm{SOV}$$
+          </div>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">where \(V=\mathrm{AIV}(B)\) from Definition&nbsp;1, \(\mathrm{Rec}\) is the share of appearances that are recommendations, \(\mathrm{Cit}\) is the share that are source-backed, and \(\mathrm{SOV}_B\) is brand \(B\)'s share of all tracked brands' appearances:</p>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$\mathrm{SOV}_B = \frac{\text{appearances}_B}{\sum_{j} \text{appearances}_j}$$
+          </div>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">e.g. across 100 category questions, if the four tracked brands appear 78, 63, 52 and 19 times respectively, the fourth brand's share of voice is \(19/(78+63+52+19) = 19/212 \approx 8.96\%\), a genuinely competitive metric, unlike "we rank #3 for one keyword."</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">6.5: Testing which factors actually predict visibility</div>
+          <p class="text-sm text-slate-600 leading-relaxed">With a panel of (query, brand, engine, date) observations and covariates \(X_1,\ldots,X_K\) (referring domains, structured-data completeness, review volume, etc.), fit:</p>
+          <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
+            $$\Pr(Y=1\mid X) = \sigma\Big(\beta_0 + \sum_{k=1}^{K}\beta_k X_k\Big), \qquad Y=1 \iff \text{brand appeared}$$
+          </div>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">This estimates <em>association</em>, not causation, a positive \(\hat\beta_k\) says a factor predicts visibility, not that moving it will change your own outcome. The difference-in-differences design in §6.3, run on your own intervention, is what upgrades a correlational finding into causal evidence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SIX LEVERS -->
+    <section id="levers">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">7. The six levers</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-6">What Theorem 1's factors mean in practice</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center">R</div><div class="font-bold text-slate-900">Relevance</div></div>
+          <p class="text-sm text-slate-600 mt-1">How closely your content matches the actual questions people ask, not the keywords you rank for. Answer-first structure and full intent-cluster coverage raise this.</p>
+        </div>
+        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center">A</div><div class="font-bold text-slate-900">Authority</div></div>
+          <p class="text-sm text-slate-600 mt-1">Independent, credible sources treating you as a trustworthy reference in your category, press, analysts, high-authority reviews.</p>
+        </div>
+        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center">E</div><div class="font-bold text-slate-900">Evidence</div></div>
+          <p class="text-sm text-slate-600 mt-1">The same claim about your brand, independently repeated across press, reviews, forums and docs, corroboration, not repetition on your own site.</p>
+        </div>
+        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center">T</div><div class="font-bold text-slate-900">Topical coverage</div></div>
+          <p class="text-sm text-slate-600 mt-1">Breadth across the full query universe \(Q\), informational, commercial, comparative and problem-oriented questions, not just your brand name.</p>
+        </div>
+        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center">S</div><div class="font-bold text-slate-900">Semantic clarity</div></div>
+          <p class="text-sm text-slate-600 mt-1">One canonical name, category and description everywhere you appear. Every naming variant adds disambiguation risk the model must resolve before it will name you.</p>
+        </div>
+        <div class="card bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center">F</div><div class="font-bold text-slate-900">Freshness</div></div>
+          <p class="text-sm text-slate-600 mt-1">Facts (pricing, specs, positioning) kept current. Stale, contradicted claims lower a system's confidence in citing you at all.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PLAYBOOK -->
+    <section id="playbook">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">8. The playbook</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-6">Turning Theorem 1 into a 90-day plan</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Weeks 1–2: Baseline</div>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">Build your query universe \(Q\) (30+ real buyer questions) and measure \(\hat p_{\text{before}}\) across ChatGPT, Gemini and AI Overviews. Hold out a comparable control set of topics per §6.3.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Weeks 3–5: S &amp; F first</div>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">Fix semantic clarity and freshness first, the neglected levers with the largest marginal \(\beta_k\sigma'(z)\) per Corollary 1. Unify naming; ship Organization/Product schema; correct stale facts.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Weeks 6–9: R &amp; T</div>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">Raise relevance and topical coverage: rewrite key pages answer-first, one direct claim per heading, covering the full intent cluster in \(Q\) rather than the head keyword alone.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Weeks 10–13: A &amp; E</div>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">Build authority and evidence: earn independent corroboration of the same core claims across press, reviews and forums. Re-run \(\hat p\) on both treatment and control, and compute \(\widehat{\mathrm{DiD}}\).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CAVEATS -->
+    <section id="caveats">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">9. Scope &amp; caveats</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">What this model is, and isn't</h2>
+      <ul class="mt-2 space-y-3 text-sm text-slate-600 max-w-3xl leading-relaxed list-disc pl-5">
+        <li>\(\sigma(z_B)\) in Section 4 is a stylized model built to be qualitatively robust, not a disclosed or reverse-engineered ranking function of any specific AI search product, those are proprietary and change frequently.</li>
+        <li>Theorem 1 and Corollary 1 are proved <em>from the model's stated assumptions</em> (\(\beta_k&gt;0\)), which is a directional claim, "these factors don't hurt, and returns diminish", not a numeric guarantee for any one brand.</li>
+        <li>Section 5's proportionality is explicitly flagged as a heuristic, not a derived result, unlike Theorem 1.</li>
+        <li>Section 6.5's regression establishes association; only the controlled experiment in §6.3, run on your own site, supports a causal claim about your own intervention.</li>
+        <li>Be skeptical of anyone selling a specific "AI schema" as a guaranteed unlock, the model here argues for a portfolio of ordinary, verifiable signals (relevance, authority, evidence, coverage, clarity, freshness), not a trick.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-slate-950 text-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 no-print">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold">Want the six-lever audit run against your real competitors?</h3>
+        <p class="text-sm text-slate-300 mt-2">I'll build your query universe \(Q\), score \(R,A,E,T,S,F\) against named competitors, and hand back a prioritized 90-day plan.</p>
+      </div>
+      <a href="mailto:mkashifn@gmail.com?subject=AI%20Search%20Visibility%20-%20audit%20request" class="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-white rounded-xl px-6 py-3.5 font-bold text-sm transition shrink-0">Request an audit →</a>
+    </section>
+
+    <!-- RELATED PUBLICATIONS -->
+    <section class="no-print">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Related publications</div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="/ai-solutions/seo-marketing/keyword-serp-intelligence.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Keyword &amp; SERP Intelligence</span><span class="text-indigo-600">→</span></a>
+        <a href="/ai-solutions/seo-marketing/seo-content-engine.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">SEO Content Engine</span><span class="text-indigo-600">→</span></a>
+        <a href="/ai-solutions/seo-marketing/technical-seo-audit.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Technical SEO Audit</span><span class="text-indigo-600">→</span></a>
+        <a href="/ai-solutions/seo-marketing/" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">SEO &amp; Marketing AI bundle</span><span class="text-indigo-600">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · White Papers · AI Search Visibility</div>
+      <div class="flex items-center gap-5 no-print">
+        <a href="/white-papers/" class="hover:text-indigo-600 transition">All white papers</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-indigo-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+  <script>
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+      throwOnError: false
+    });
+  </script>
+
+  <script>
+    (function () {
+      var PASSWORD = "smort";
+      var STORAGE_KEY = "wp-ai-search-visibility-unlocked";
+      var gate = document.getElementById("gate");
+      var content = document.getElementById("content");
+      var form = document.getElementById("gate-form");
+      var input = document.getElementById("gate-input");
+      var box = document.getElementById("gate-box");
+      var error = document.getElementById("gate-error");
+
+      function unlock() {
+        gate.classList.add("hidden");
+        content.classList.remove("hidden");
+      }
+
+      try {
+        if (localStorage.getItem(STORAGE_KEY) === "true") unlock();
+      } catch (e) {}
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (input.value.trim().toLowerCase() === PASSWORD) {
+          try { localStorage.setItem(STORAGE_KEY, "true"); } catch (e) {}
+          unlock();
+        } else {
+          error.classList.remove("hidden");
+          box.classList.remove("shake");
+          void box.offsetWidth;
+          box.classList.add("shake");
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

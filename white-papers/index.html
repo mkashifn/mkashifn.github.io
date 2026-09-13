@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>White Papers</title>
+  <meta name="description" content="White papers by Kashif Naveed, applied AI, formalized. Research notes on AI search visibility, governance, and architecture, with the models behind the recommendations." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { boxShadow: {
+      soft: "0 20px 60px rgba(15,23,42,.08)", card: "0 10px 30px rgba(15,23,42,.06)" } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:
+      radial-gradient(circle at 10% 0%, rgba(79,70,229,.08), transparent 30%),
+      radial-gradient(circle at 90% 10%, rgba(217,70,239,.08), transparent 30%), #f8fafc; }
+    .grid-bg { background-image:
+      linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px); background-size: 32px 32px; }
+    .card { transition: all .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(15,23,42,.12); }
+    .fade-in { animation: fadeIn .35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+
+<body class="text-slate-800">
+
+  <!-- HEADER -->
+  <header class="border-b border-slate-200 bg-white/90 backdrop-blur-xl sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+      <div class="flex items-center gap-3 shrink-0">
+        <img src="/assets/kn-photo.png" alt="Kashif Naveed" class="w-11 h-11 rounded-full object-cover ring-2 ring-indigo-100" />
+        <div class="font-bold text-slate-900">Kashif Naveed</div>
+      </div>
+      <div class="md:border-l md:border-slate-200 md:pl-6">
+        <h1 class="text-lg md:text-xl font-bold tracking-tight text-slate-950">
+          White Papers
+          <span class="text-indigo-600">· applied AI, formalized.</span>
+        </h1>
+        <p class="text-sm text-slate-500 leading-relaxed">
+          Research notes with the model behind the recommendation, not just the recommendation.
+        </p>
+      </div>
+      <div class="md:ml-auto shrink-0">
+        <a href="/" class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-2.5 font-bold text-sm text-slate-700 hover:border-indigo-300 transition">← Home</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="grid-bg border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-14 md:py-20 text-center fade-in">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold mb-5">
+        <span class="w-2 h-2 bg-indigo-500 rounded-full"></span>
+        Long-form research
+      </div>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl mx-auto">
+        Playbooks are opinions.
+        <span class="text-indigo-600">These come with the proof.</span>
+      </h2>
+      <p class="mt-5 text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        Each paper takes one applied-AI question, builds the smallest model that explains why the
+        obvious tactics work (or don't), and derives the playbook from that model rather than the
+        other way around.
+      </p>
+    </div>
+  </section>
+
+  <!-- PAPERS -->
+  <section class="max-w-7xl mx-auto px-6 py-16 md:py-20">
+    <div class="text-center mb-12">
+      <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Latest</div>
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-950">Papers</h3>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- AI SEARCH VISIBILITY -->
+      <a href="/white-papers/ai-search-visibility.html"
+         class="card group bg-white border border-slate-200 rounded-2xl p-7 shadow-card flex flex-col">
+        <div class="flex items-center justify-between mb-5">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-100 rounded-full px-2.5 py-1">GEO / AEO</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-950 mb-2">How to Make Your Brand Appear in AI Search</h4>
+        <p class="text-sm text-slate-600 leading-relaxed flex-1">
+          A formal probabilistic model of AI-search citation, six evidence factors, a monotonicity
+          proof for why all six beat maxing out one, and a difference-in-differences design for
+          proving the effect.
+        </p>
+        <div class="mt-4 flex items-center justify-between text-xs text-slate-400">
+          <span>🔒 Gated download</span>
+          <span class="inline-flex items-center gap-1.5 text-sm font-bold text-indigo-600 group-hover:gap-2.5 transition-all">Read →</span>
+        </div>
+      </a>
+
+      <!-- MORE COMING -->
+      <div class="border-2 border-dashed border-slate-200 rounded-2xl p-7 flex flex-col items-center justify-center text-center text-slate-400">
+        <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <p class="text-sm font-semibold">More papers in progress</p>
+        <p class="text-xs mt-1 max-w-xs">Governance, architecture, and evaluation topics next, <a href="mailto:mkashifn@gmail.com?subject=White%20paper%20request" class="underline hover:text-indigo-600">suggest a topic</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELATED PUBLICATIONS -->
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Related publications elsewhere on this site</div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="/ai-solutions/seo-marketing/" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">SEO &amp; Marketing AI bundle</span><span class="text-indigo-600">→</span></a>
+      <a href="/ai-governance/" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">AI Governance (ISO/IEC 42001)</span><span class="text-amber-600">→</span></a>
+      <a href="/boardroom/directors-ai-question-bank.html" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">Director's AI Question Bank</span><span class="text-amber-600">→</span></a>
+      <a href="/ai-architectures/" class="card bg-white border border-slate-200 rounded-xl p-5 flex items-center justify-between"><span class="font-bold text-slate-800 text-sm">AI Architectures</span><span class="text-cyan-600">→</span></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200 bg-white/60">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div><span class="font-bold text-slate-700">Kashif Naveed</span> · White Papers</div>
+      <div class="flex items-center gap-5">
+        <a href="/" class="hover:text-indigo-600 transition">Home</a>
+        <a href="mailto:mkashifn@gmail.com" class="hover:text-indigo-600 transition">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
