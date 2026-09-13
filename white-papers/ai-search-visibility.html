@@ -166,6 +166,8 @@
           <a href="#levers" class="text-slate-600 hover:text-indigo-600 transition">8. The six levers</a>
           <a href="#playbook" class="text-slate-600 hover:text-indigo-600 transition">9. A 90-day plan</a>
           <a href="#caveats" class="text-slate-600 hover:text-indigo-600 transition">10. Scope &amp; caveats</a>
+          <a href="#extensions" class="text-slate-600 hover:text-indigo-600 transition">Extensions: Web3 &amp; Web4</a>
+          <a href="#references" class="text-slate-600 hover:text-indigo-600 transition">References</a>
         </div>
       </div>
     </section>
@@ -177,8 +179,13 @@
       <p class="text-slate-600 leading-7 max-w-3xl">
         Keyword-era Google search was a solved adversarial game against a mostly-public, single-page
         scoring function: match the query's terms, accumulate backlinks, rank higher than the page next
-        to you. AI answer engines don't rank pages at all, they retrieve a handful of trusted sources and
-        generate one answer, so almost nothing about the old game transfers cleanly.
+        to you. AI answer engines don't rank pages at all, they run the
+        <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">retrieve-then-generate architecture</a>
+        underlying modern LLM search: retrieve a handful of trusted sources, then generate one answer, so
+        almost nothing about the old game transfers cleanly. This paper's six-factor model and
+        monotonicity proof (Section 4) build on and formalize the applied
+        <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">Generative Engine Optimization (GEO) research</a>
+        that first measured this shift empirically.
       </p>
       <div class="mt-6 overflow-x-auto">
         <table class="w-full text-sm border-collapse">
@@ -467,7 +474,7 @@
       </div>
 
       <div class="mt-6 bg-white border border-slate-200 rounded-2xl p-6">
-        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Proposition 3: evidence as a costly signal (Spence, 1973)</div>
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Proposition 3: evidence as a costly signal (<a href="https://doi.org/10.2307/1882010" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700 normal-case tracking-normal font-normal">Spence, 1973</a>)</div>
         <p class="text-sm text-slate-600 leading-relaxed">The heuristic above says independent evidence compounds. Game theory says why an AI system is <em>right</em> to trust it. Model each brand as having a true, unobserved quality \(\tau \in \{\tau_L,\tau_H\}\), \(\tau_H&gt;\tau_L&gt;0\), the AI system cannot see directly. It observes only the evidence level \(E_B\) built up above, and recommends the brand if it does so, worth \(v\) to the brand. Producing \(E_B\) isn't free: assume a cost</p>
         <div class="mt-4 bg-slate-950 text-white rounded-xl p-4 text-sm eqbox">
           $$c(E_B, \tau) = \frac{E_B^2}{2\tau}$$
@@ -668,6 +675,73 @@
         <li>Section 7.5's regression establishes association; only the controlled experiment in §7.3, run on your own site, supports a causal claim about your own intervention.</li>
         <li>Be skeptical of anyone selling a specific "AI schema" as a guaranteed unlock, the model here argues for a portfolio of ordinary, verifiable signals (relevance, authority, evidence, coverage, clarity, freshness), not a trick.</li>
       </ul>
+    </section>
+
+    <!-- EXTENSIONS: WEB3 / WEB4 -->
+    <section id="extensions">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">Extensions</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">Where this heads next: Web3 and the agentic web (Web4)</h2>
+      <p class="text-slate-600 leading-7 max-w-3xl">
+        Both terms are overloaded, "Web3" is used for anything blockchain-adjacent, and "Web4" has at
+        least two competing definitions, so this section is explicit about which one it means and stays
+        on the honest, forward-looking side of the caveats above.
+      </p>
+
+      <div class="mt-6 space-y-6">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Web3: cryptographically verifiable identity and evidence</div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Here "Web3" means decentralized, cryptographically verifiable identity and attestations, not
+            token speculation. The
+            <a href="https://www.w3.org/TR/did/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">W3C Decentralized Identifiers (DID) standard</a>
+            lets an entity hold a single, cryptographically controlled identifier instead of the scattered
+            name variants that drag down Acme's \(S\) score in Section 4. Verifiable credentials issued
+            by known-authority parties, and staked, on-chain attestations, are a stronger instance of
+            Section 6's \(E\): Proposition 3's separating equilibrium gets <em>more</em> reliable, not less,
+            when faking the signal costs real, forfeitable collateral rather than just reputational risk.
+          </p>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+            The honest caveat: this is forward-looking. Retrieval systems today mostly don't index on-chain
+            data as a first-class evidence source, so \(A\) and \(E\) in Section 4's model are, for now,
+            driven almost entirely by conventional web evidence. This section describes a plausible
+            direction the \(E\) and \(S\) factors could strengthen along, not current practice.
+          </p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Web4: when the asker is an agent, not a human</div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            The
+            <a href="https://digital-strategy.ec.europa.eu/en/news/towards-next-technological-transition-commission-presents-eu-strategy-lead-web-40-and-virtual" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">European Commission's official "Web 4.0" strategy</a>
+            frames the next transition around ambient, embedded AI acting on people's behalf; the more
+            common industry shorthand is the "agentic web," AI agents that research, compare and
+            transact for a human principal, increasingly via standardized tool protocols such as
+            <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">Anthropic's Model Context Protocol (MCP)</a>.
+          </p>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+            For this paper's model, that's not a new theory, it's the same \(q\) in \(P_B(q)\) asked by a
+            different kind of principal. An agent calling a structured tool for "compare project management
+            tools for agencies" is a highly literal instance of the retrieval step in Section 4, and agents
+            are, if anything, more sensitive to \(S\) (unambiguous, machine-readable entity data) and less
+            forgiving of \(F\) (stale facts) than a human skimming a synthesized paragraph. The six-factor
+            model doesn't change when the asker is an agent; the levers that were always cheap and
+            high-leverage, semantic clarity and freshness (Section 5), become more load-bearing, not less.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section id="references" class="no-print">
+      <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">References</div>
+      <ol class="space-y-2 text-sm text-slate-600 max-w-3xl list-decimal pl-5">
+        <li>Spence, M. (1973). "Job Market Signaling." <em>The Quarterly Journal of Economics</em>, 87(3), 355–374. <a href="https://doi.org/10.2307/1882010" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">doi.org/10.2307/1882010</a>: the separating-equilibrium result behind Section 6's Proposition 3.</li>
+        <li>Lewis, P., Perez, E., Piktus, A., et al. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." <em>NeurIPS 2020</em>. <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">arXiv:2005.11401</a>: the retrieve-then-generate architecture this whole paper assumes.</li>
+        <li>Aggarwal, P., Murahari, V., Rajpurohit, T., Kalyan, A., Narasimhan, K., &amp; Deshpande, A. (2024). "GEO: Generative Engine Optimization." <em>KDD '24</em>. <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">arXiv:2311.09735</a>: the empirical GEO literature this paper's formal model complements; not the source of Theorem 1, which is original to this paper.</li>
+        <li>W3C (2022). "Decentralized Identifiers (DIDs) v1.0." W3C Recommendation. <a href="https://www.w3.org/TR/did/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">w3.org/TR/did</a>.</li>
+        <li>European Commission (2023). "Towards the next technological transition: Commission presents EU strategy to lead on Web 4.0 and virtual worlds." COM(2023) 442 final. <a href="https://digital-strategy.ec.europa.eu/en/news/towards-next-technological-transition-commission-presents-eu-strategy-lead-web-40-and-virtual" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">digital-strategy.ec.europa.eu</a>.</li>
+        <li>Anthropic (2024). "Introducing the Model Context Protocol." <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener noreferrer" class="text-indigo-600 underline hover:text-indigo-700">anthropic.com/news/model-context-protocol</a>.</li>
+      </ol>
     </section>
 
     <!-- CTA -->
