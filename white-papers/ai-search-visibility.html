@@ -91,7 +91,7 @@
       <div class="flex flex-wrap items-center gap-3 mb-4">
         <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold">White paper</span>
         <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">GEO / AEO</span>
-        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">~15 min read</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">~22 min read</span>
       </div>
       <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 leading-tight max-w-3xl">
         How to Make Your Brand Appear in AI Search
@@ -154,6 +154,8 @@
       <div class="bg-white border border-slate-200 rounded-2xl p-6">
         <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Contents</div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 text-sm">
+          <a href="#comparison" class="text-slate-600 hover:text-indigo-600 transition">Why this isn't keyword SEO again</a>
+          <a href="#eli5" class="text-slate-600 hover:text-indigo-600 transition">The same idea, five times</a>
           <a href="#definitions" class="text-slate-600 hover:text-indigo-600 transition">1. Defining AI visibility</a>
           <a href="#dimensions" class="text-slate-600 hover:text-indigo-600 transition">2. Mention, recommendation, citation</a>
           <a href="#objective" class="text-slate-600 hover:text-indigo-600 transition">3. The objective as an expectation</a>
@@ -164,6 +166,73 @@
           <a href="#levers" class="text-slate-600 hover:text-indigo-600 transition">8. The six levers</a>
           <a href="#playbook" class="text-slate-600 hover:text-indigo-600 transition">9. A 90-day plan</a>
           <a href="#caveats" class="text-slate-600 hover:text-indigo-600 transition">10. Scope &amp; caveats</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY THIS ISN'T KEYWORD SEO -->
+    <section id="comparison">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">Why this isn't keyword SEO again</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">The target moved from a ranked page to a synthesized answer</h2>
+      <p class="text-slate-600 leading-7 max-w-3xl">
+        Keyword-era Google search was a solved adversarial game against a mostly-public, single-page
+        scoring function: match the query's terms, accumulate backlinks, rank higher than the page next
+        to you. AI answer engines don't rank pages at all, they retrieve a handful of trusted sources and
+        generate one answer, so almost nothing about the old game transfers cleanly.
+      </p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead><tr class="text-left text-slate-400"><th class="pb-2 pr-4 font-semibold">Dimension</th><th class="pb-2 pr-4 font-semibold">Keyword-era Google search</th><th class="pb-2 font-semibold">AI answer engines (GEO)</th></tr></thead>
+          <tbody class="text-slate-700">
+            <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold">Unit of competition</td><td class="py-2.5 pr-4">A ranked page, position 1–10</td><td class="py-2.5">A named brand inside one synthesized answer</td></tr>
+            <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold">Matching mechanism</td><td class="py-2.5 pr-4">Keyword/TF-IDF match + link-graph authority (PageRank)</td><td class="py-2.5">Semantic embedding retrieval, then LLM reasoning over what's retrieved</td></tr>
+            <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold">What "winning" looks like</td><td class="py-2.5 pr-4">Appearing in a list a human scrolls through</td><td class="py-2.5">Being one of the handful of brands the model actually names</td></tr>
+            <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold">Success metric</td><td class="py-2.5 pr-4">Click-through rate, SERP position</td><td class="py-2.5">\(P_B(q)\), the model's citation probability (Sections 1, 3)</td></tr>
+            <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold">Primary lever</td><td class="py-2.5 pr-4">Exact-match keywords, anchor-text backlinks, on one page</td><td class="py-2.5">The six-factor evidence profile \((R,A,E,T,S,F)\) across the whole entity</td></tr>
+            <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold">Gaming surface</td><td class="py-2.5 pr-4">Keyword stuffing, link schemes, doorway pages</td><td class="py-2.5">Structurally harder: Section 6 shows cheap-to-fake evidence stops working once it's cheap</td></tr>
+            <tr class="border-t border-slate-100"><td class="py-2.5 pr-4 font-semibold">Where the evidence lives</td><td class="py-2.5 pr-4">On your own domain, optimized in isolation</td><td class="py-2.5">Distributed across independent sources; corroboration is the point</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-slate-600 leading-7 max-w-3xl">
+        In the keyword era, ranking was largely a page-level optimization against a known target (match
+        the terms, out-link the competitor). In the answer-engine era, the target is an entity's aggregate
+        evidentiary footprint across the open web, evaluated by systems that reward exactly the things
+        that are hard to fake, positive \(\beta_k\) on relevance, authority, corroborated evidence,
+        coverage, clarity and freshness (Theorem 1), reinforced by the signaling result in Section 6.
+        Tactics that used to work on a single page, keyword density, reciprocal link exchanges, thin
+        content at scale, either do nothing here or actively work against you.
+      </p>
+    </section>
+
+    <!-- THE SAME IDEA, FIVE TIMES -->
+    <section id="eli5">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-3">Before the equations</div>
+      <h2 class="text-2xl font-bold text-slate-950 mb-4">The same idea, five times, from a five-year-old to a proof</h2>
+      <p class="text-slate-600 leading-7 max-w-3xl">
+        Every level below describes the exact same model. Nothing is dumbed down so much that it becomes
+        wrong, each level is a legitimate compression of the one below it.
+      </p>
+      <div class="mt-6 space-y-4">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">To a five-year-old</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Imagine you ask your smartest friend where to eat dinner. Your friend won't recommend a restaurant they've never heard anyone else talk about, no matter how good the food secretly is. They pick the place their other friends keep mentioning.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">To a curious teenager</div>
+          <p class="text-sm text-slate-600 leading-relaxed">An AI answer engine doesn't hand you ten links to click through. It reads a handful of sources it trusts, then writes one answer and names a few brands, maybe none of yours, if nobody talks about you where the AI is looking.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">To a marketer</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Six things push a brand into that shortlist: how relevant your content is to the question (\(R\)), how authoritative your site looks (\(A\)), how much independent evidence backs your claims (\(E\)), how much of the question space you cover (\(T\)), how consistently you're named across the web (\(S\)), and how current your facts are (\(F\)). More of any one of them, strictly, never hurts, that's Theorem 1 in Section 4.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">To a data scientist</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Model citation as a Bernoulli event with probability \(P_B(q) = \sigma(z_B(q))\), where \(z_B\) is a linear combination of the six factors. Because \(\partial P_B/\partial x_k = \beta_k\,\sigma(z_B)(1-\sigma(z_B)) &gt; 0\) whenever \(\beta_k&gt;0\), this is a logistic regression with a provable monotonicity property, not just an intuition, and Section 6's signaling model explains why the evidence coefficient is trustworthy at all.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">To a mathematician</div>
+          <p class="text-sm text-slate-600 leading-relaxed">See Section 4 for Definition 2, Theorem 1 and its proof, and Corollary 1 for the concavity argument; Section 5's Proposition 2 for the budget-constrained optimal lever; and Section 6's Proposition 3 for the Spence-type separating equilibrium behind the \(E\) coefficient.</p>
         </div>
       </div>
     </section>
@@ -506,6 +575,60 @@
           <div class="flex items-center gap-3 mb-1"><div class="w-9 h-9 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center">F</div><div class="font-bold text-slate-900">Freshness</div></div>
           <p class="text-sm text-slate-600 mt-1">Facts (pricing, specs, positioning) kept current. Stale, contradicted claims lower a system's confidence in citing you at all.</p>
         </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-slate-950 mt-10 mb-2">How to research and move each one</h3>
+      <p class="text-slate-600 leading-7 max-w-3xl mb-6">For each lever: what to measure (feeding the audit sheet in Section 4), and what to actually do about it.</p>
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-3"><div class="w-7 h-7 rounded-lg bg-indigo-600 text-white text-xs font-bold flex items-center justify-center">R</div><div class="font-bold text-slate-900 text-sm">Relevance</div></div>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Research</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Pull your 30–50 question query universe \(Q\). For each, check whether a dedicated page exists and answers it in the first 100 words; score embedding similarity between your top pages and each question if you have the tooling.</p>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1">Optimize</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Rewrite key pages answer-first, one direct claim per heading. Build pages for every question in \(Q\) with no dedicated answer. Use buyers' own phrasing, not internal jargon.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-3"><div class="w-7 h-7 rounded-lg bg-indigo-600 text-white text-xs font-bold flex items-center justify-center">A</div><div class="font-bold text-slate-900 text-sm">Authority</div></div>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Research</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Pull referring domains, backlink count and a third-party domain-authority score; count Tier-1 publication mentions. Benchmark against 2–3 category leaders (as in Section 4's audit sheet).</p>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1">Optimize</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Earn links and mentions from independently-operated, category-relevant sources: research reports journalists cite, guest contributions, analyst briefings. Never buy links, Section 6 shows why cheap authority doesn't hold up.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-3"><div class="w-7 h-7 rounded-lg bg-indigo-600 text-white text-xs font-bold flex items-center justify-center">E</div><div class="font-bold text-slate-900 text-sm">Evidence</div></div>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Research</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Count independent mentions over the last 12 months, review volume across platforms, third-party comparison articles, and high-authority citations. Cross-check against brand-search volume (Section 6).</p>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1">Optimize</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Prompt real customers for reviews, never incentivized or fake ones. Pitch journalists and analysts genuinely newsworthy data. Get included in independent comparison content, not just your own "X vs Y" pages.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-3"><div class="w-7 h-7 rounded-lg bg-indigo-600 text-white text-xs font-bold flex items-center justify-center">T</div><div class="font-bold text-slate-900 text-sm">Topical coverage</div></div>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Research</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Map \(Q\)'s informational, commercial, comparative and problem-oriented questions against your content: what share has a dedicated page, and how many comparison pages exist, and who wrote them.</p>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1">Optimize</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Close the gaps across the full cluster, not just the head term. Build genuine "X vs Y" pages for every credible alternative. Breadth without depth doesn't help, this lever interacts with \(R\).</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-3"><div class="w-7 h-7 rounded-lg bg-indigo-600 text-white text-xs font-bold flex items-center justify-center">S</div><div class="font-bold text-slate-900 text-sm">Semantic clarity</div></div>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Research</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Audit every place your name and description appear (own site, LinkedIn, Crunchbase, G2, Wikidata) for consistency, and check completeness of Organization/Product schema against the 10 core fields.</p>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1">Optimize</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Pick one canonical name, category and description. Update every owned property to match. Ship complete Organization + Product schema.org markup; claim and standardize third-party profiles.</p>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6">
+          <div class="flex items-center gap-2 mb-3"><div class="w-7 h-7 rounded-lg bg-indigo-600 text-white text-xs font-bold flex items-center justify-center">F</div><div class="font-bold text-slate-900 text-sm">Freshness</div></div>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Research</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Audit last-updated dates on pricing, feature and comparison pages. Flag stale or contradicted claims (old pricing, deprecated features, outdated stats).</p>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1">Optimize</div>
+          <p class="text-sm text-slate-600 leading-relaxed">Put pricing and feature pages on a maintenance cadence (monthly fact-check is usually enough). Timestamp updates visibly. Retire or correct outdated claims promptly, this is the cheapest lever to hold.</p>
+        </div>
+
       </div>
     </section>
 
